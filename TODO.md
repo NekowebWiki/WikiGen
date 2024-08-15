@@ -1,12 +1,12 @@
 == SSG ==
 
 [] Create templates for the content.
-[] Create easy-to-maintain format, likely Markdown based, to be able to write
+[x] Create easy-to-maintain format, likely Markdown based, to be able to write
    and edit content more easily.
 [] Figure out directory locations for non-built pages, static images (under /i
    in built wiki).
 [] Properly set Open Graph and title tags
-[] Auto generate table of contents
+[x] Auto generate table of contents
 
 === Space saving ===
 
