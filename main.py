@@ -1,4 +1,13 @@
 from markdown2 import markdown_path as INTERNAL_MD
+from jinja2 import Environment as JINJA_ENV_INIT, \
+                   PackageLoader as JINJA_LOADER, select_autoescape
+
+JinjaEnv = JINJA_ENV_INIT(
+    loader=JINJA_LOADER("nekowebwiki", "views"),
+    autoescape=select_autoescape()
+)
+
+WIKI_PAGE_TEMPLATE = JinjaEnv.get_template("wikipage.html")
 
 def RenderMarkdown(path: str):
     """

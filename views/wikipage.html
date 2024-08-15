@@ -1,0 +1,10 @@
+{% extends "_layout.html" %}
+
+{% block main %}
+<hgroup role="group">
+    <h1>{{ PAGE_TITLE }}</h1>
+    <p>{{ PAGE_DESCRIPTION }}</p>
+</hgroup>
+{{ TableOfContents }}
+{{ Content }}{% endblock %}
+

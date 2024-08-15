@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ PAGE_TITLE }}</title>
+    <link
+        rel="icon"
+        type="image/png"
+        href="https://nekoweb.org/assets/meow.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/wiki-onionring.css" />
+    <meta property="og:type" content="{{ PAGE_TYPE }}" />
+    <meta property="og:title" content="{{ PAGE_TITLE }}" />
+    <meta property="og:description" content="{{ PAGE_DESC }}" />
+    <meta property="og:site_name" content="Nekoweb Wiki" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+            <img src="/wiki-logo-new.png" alt="Wiki logo" />
+        </div>
+        <ul>
+          <li class="strong">Navigation</li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/pages.html">Index</a></li>
+          <li><a href="/about.html">About</a></li>
+        </ul>
+        <ul>
+          <li class="strong">Community</li>
+          <li><a href="https://discord.gg/f4b4e2Nudk">Discord</a></li>
+          <li><a href="https://wiki.atabook.org/">Guestbook</a></li>
+        </ul>
+        <div id="nekowebring">
+          <script
+            type="text/javascript"
+            src="https://webring.nekoweb.org/onionring-variables.js"
+          ></script>
+          <script
+            type="text/javascript"
+            src="https://webring.nekoweb.org/onionring-widget.js"
+          ></script>
+        </div>
+      </div>
+      <div class="main">{% block main %}{% endblock %}</div>
+    </div>
+  </body>
+</html>
