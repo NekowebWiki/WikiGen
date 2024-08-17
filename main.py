@@ -38,7 +38,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         isarticle = rawinfo["articledir"]
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         PageTitle = RenderedMD.metadata["title"]
-        PageSubtitle = RenderedMD.metadata["subtitle"]
+        PageSubtitle = RenderedMD.metadata["subtitle"] if "subtitle" in RenderedMD.metadata else None
         TableOfContents = TOC(RenderedMD.toc_html)
         RenderedOut = content.replace(".md", ".html")
         JinjaRender(
