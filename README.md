@@ -2,7 +2,7 @@
 
 I bare bones static site generator made specifically for the Nekoweb wiki.
 
-This is still being built, and doesn't yet produce usable output.
+Content should be ready to start being ported.
 
 ## Directories
 
