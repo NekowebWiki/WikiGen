@@ -1,20 +1,7 @@
-== SSG ==
+[] GitHub Actions (wiki acc owner has to add an API token to the secrets)
 
-[~] Create templates for the content.
-[x] Create easy-to-maintain format, likely Markdown based, to be able to write
-    and edit content more easily.
-[x] Figure out directory locations for non-built pages, static images (under /i
-   in built wiki).
-[x] Properly set Open Graph and title tags
-[x] Auto generate table of contents
+The following rely on the repo being public
 
-=== Space saving ===
-
-[] Minify all pages after having been built.
-[] Use space-saving image formats, WebP, for all images, especially larger ones.
-[x] Use relative URLs for non-external links.
-
-== Content ==
-
-[x] Reformat all content in aforementioned MD format.
-
+[] Write MD reference   (likely in headpages)
+[] Write contrib. guide (likely in headpages)
+[] Advertise GitHub repo on wiki: index and sidebar; possibly an "edit on GitHub" button.
