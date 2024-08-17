@@ -3,7 +3,7 @@ from jinja2 import Environment as JINJA_ENV_INIT, \
                    FileSystemLoader as JINJA_LOADER, select_autoescape
 from os import PathLike
 from os.path import join as JoinPath
-from CONFIG import OUPUT_DIR
+from config import OUTPUT_DIR
 from jinja2.environment import Template as JINJA_TEMPLATE
 
 JinjaEnv = JINJA_ENV_INIT(
