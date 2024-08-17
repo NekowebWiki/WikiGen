@@ -3,8 +3,8 @@ from jinja2 import Environment as JINJA_ENV_INIT, \
                    FileSystemLoader as JINJA_LOADER, select_autoescape
 from os import PathLike
 from os.path import join as JoinPath
-from config import OUTPUT_DIR
 from jinja2.environment import Template as JINJA_TEMPLATE
+from re import split as RegSplit
 
 JinjaEnv = JINJA_ENV_INIT(
     loader=JINJA_LOADER("views"),
@@ -26,9 +26,20 @@ def RenderMarkdown(path: str):
     Extras = {
         "toc": None,
         "metadata": None,
+        "footnotes": None,
+        "cuddled-lists": None,
+        "fenced-code-blocks": None,
+        "markdown-in-html": None,
+        "strike": None,
+        "tg-spoiler": None,
+        "latex": None,
     }
     Rendered = INTERNAL_MD(path, extras=Extras)
     return Rendered
+
+def TOC(toc_html: str) -> str:
+    ParsedTOC = toc_html[6:len(toc_html)-6].replace("<ul>", "<ol>").replace("</ul>", "</ol>")
+    return ParsedTOC
 
 def JinjaRender(
     templatein: JINJA_TEMPLATE,
@@ -36,5 +47,5 @@ def JinjaRender(
     **kwargs
 ):
     Rendered = templatein.render(**kwargs)
-    with open(JoinPath(OUTPUT_DIR, outpath), "x") as f:
+    with open(outpath, "x") as f:
         f.write(Rendered)

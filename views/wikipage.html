@@ -2,9 +2,16 @@
 
 {% block main %}
 <hgroup role="group">
-    <h1>{{ PAGE_TITLE }}</h1>
-    <p>{{ PAGE_DESCRIPTION }}</p>
+    <h1>{{ DisplayTitle if DisplayTitle else PAGE_TITLE }}</h1>
+    {% if PAGE_DESC %}<p>{{ PAGE_DESC }}</p>{% endif %}
 </hgroup>
-{{ TableOfContents }}
-{{ Content }}{% endblock %}
+{% if TableOfContents %}
+<nav role="doc-toc">
+    <h2>Contents</h2>
+    <ol role="directory">
+        {{ TableOfContents|safe }}
+    </ol>
+</nav>
+{% endif %}
+{{ Content|safe }}{% endblock %}
 

@@ -7,11 +7,15 @@
         type="image/png"
         href="https://nekoweb.org/assets/meow.png"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/wiki-onionring.css" />
     <meta property="og:type" content="{{ PAGE_TYPE }}" />
     <meta property="og:title" content="{{ PAGE_TITLE }}" />
+    {% if PAGE_DESC %}
     <meta property="og:description" content="{{ PAGE_DESC }}" />
+    {% else %}
+    <meta property="og:description" content="{{ PAGE_TITLE }}" />
+    {% endif %}
     <meta property="og:site_name" content="Nekoweb Wiki" />
   </head>
   <body>
