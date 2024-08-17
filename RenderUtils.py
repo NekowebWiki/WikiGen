@@ -52,5 +52,5 @@ def JinjaRender(
     **kwargs
 ):
     Rendered = templatein.render(**kwargs)
-    with open(outpath, "x") as f:
+    with open(outpath, "x", encoding="utf-8") as f:
         f.write(Rendered)
