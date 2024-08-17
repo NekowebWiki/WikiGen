@@ -4,7 +4,7 @@ from jinja2 import Environment as JINJA_ENV_INIT, \
 from os import PathLike
 from os.path import join as JoinPath
 from jinja2.environment import Template as JINJA_TEMPLATE
-from re import split as RegSplit, compile as ReCompile
+from re import split as RegSplit, sub as RegSub
 from config import LINK_PATTERS
 
 JinjaEnv = JINJA_ENV_INIT(
@@ -44,6 +44,24 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
         link_patterns=LINK_PATTERS
     )
     return Rendered
+
+def MDWiki(RenderedMarkdown: str) -> str:
+    ParsedOutput = RegSub(
+        r"<sup class=\"footnote-ref\"",
+        "<sup class=\"footnote-ref\" role=\"doc-noteref\"",
+        RenderedMarkdown
+    )
+    ParsedOutput = RegSub(
+        r"<li id=\"fn-",
+        "<li role=\"doc-footnote\" id=\"fn-",
+        ParsedOutput
+    )
+    ParsedOutput = RegSub(
+        r"<div class=\"footnotes\">\r?\n<hr \/>",
+        "<div class=\"footnotes\">",
+        ParsedOutput
+    )
+    return ParsedOutput
 
 def TOC(toc_html: str | None, forcenone: bool = False) -> str | None:
     if toc_html is None or forcenone:

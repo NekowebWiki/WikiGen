@@ -1,4 +1,4 @@
-from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate
+from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate, MDWiki
 from os import listdir
 from os.path import join as JoinPath, isdir
 from MiscUtils import InitDir
@@ -46,6 +46,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
                                 (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
                           ))
         RenderedOut = content.replace(".md", ".html")
+        WikiRender = MDWiki(RenderedMD)
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
             JoinPath(output, RenderedOut),
@@ -54,7 +55,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             DisplayTitle=PageTitle,
             PAGE_DESC=PageSubtitle,
             TableOfContents=TableOfContents,
-            Content=RenderedMD
+            Content=WikiRender
         )
 
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
