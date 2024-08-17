@@ -1,4 +1,4 @@
-from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC
+from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate
 from os import listdir
 from os.path import join as JoinPath, isdir
 from MiscUtils import InitDir
@@ -13,13 +13,11 @@ DIRECTORIES = {
     "content": {
         "out": "w",
         "static": False,
-        "indexdir": True,
         "articledir": True
     },
     "headpages": {
         "out": "",
         "static": False,
-        "indexdir": False,
         "articledir": False
     },
     "images": {
@@ -28,14 +26,16 @@ DIRECTORIES = {
     }
 }
 
-DirsIndexed = {}
+Indexed = []
 
-def wikiparse(input_dir: str, output: str, isarticle: bool = True):
+def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articledir": True }):
+    global Indexed
     contents = listdir(input_dir)
     for content in contents:
         if isdir(content):
-            wikiparse(JoinPath(input_dir, content), JoinPath(output, content))
+            wikiparse(JoinPath(input_dir, content), JoinPath(output, content), rawinfo=rawinfo)
             continue
+        isarticle = rawinfo["articledir"]
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         PageTitle = RenderedMD.metadata["title"]
         PageSubtitle = RenderedMD.metadata["subtitle"]
@@ -52,7 +52,13 @@ def wikiparse(input_dir: str, output: str, isarticle: bool = True):
             Content=RenderedMD
         )
 
+        webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
+
+        if isarticle:
+            Indexed.append((webout,PageTitle))
+
 def main():
+    global Indexed
     InitDir(OUTPUT_DIR)
 
     for directory, info in DIRECTORIES.items():
@@ -64,7 +70,15 @@ def main():
 
         InitDir(output, overwrite=False)
 
-        wikiparse(directory, output)
+        wikiparse(directory, output, rawinfo=info)
+    JinjaRender(
+        GetTemplate("pageindex.html"),
+        JoinPath("build", "pages.html"),
+        PAGE_TITLE = "Page Index",
+        PAGE_DESCRIPTION = "A list of pages on this wiki.",
+        PAGE_TYPE = "website",
+        pages = Indexed
+    )
 
 if __name__ == "__main__":
     main()

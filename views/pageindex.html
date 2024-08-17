@@ -1,0 +1,11 @@
+{% extends "_layout.html" %}
+
+{% block main %}
+<h1>Page Index</h1>
+
+<ul>
+    {% for href, title in pages %}
+    <li><a href="{{ href }}">{{ title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

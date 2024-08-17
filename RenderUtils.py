@@ -1,4 +1,4 @@
-from markdown2 import markdown_path as INTERNAL_MD
+from markdown2 import markdown_path as INTERNAL_MD, UnicodeWithAttrs
 from jinja2 import Environment as JINJA_ENV_INIT, \
                    FileSystemLoader as JINJA_LOADER, select_autoescape
 from os import PathLike
@@ -13,7 +13,10 @@ JinjaEnv = JINJA_ENV_INIT(
 
 WIKI_PAGE_TEMPLATE = JinjaEnv.get_template("wikipage.html")
 
-def RenderMarkdown(path: str):
+def GetTemplate(path) -> JINJA_TEMPLATE:
+    return JinjaEnv.get_template(path)
+
+def RenderMarkdown(path: str) -> UnicodeWithAttrs:
     """
     Returned value has 3 "states" (you could say):
 
