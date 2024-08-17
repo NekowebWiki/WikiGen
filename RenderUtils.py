@@ -6,6 +6,7 @@ from os.path import join as JoinPath
 from jinja2.environment import Template as JINJA_TEMPLATE
 from re import split as RegSplit, sub as RegSub
 from config import LINK_PATTERS
+from typing import Pattern as REGEXP
 
 JinjaEnv = JINJA_ENV_INIT(
     loader=JINJA_LOADER("views"),
@@ -45,21 +46,38 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
     )
     return Rendered
 
+def SubMulti(
+    haystack: str,
+    *needles: tuple[str | REGEXP, str]
+) -> str:
+    fin = haystack
+    for needle, replace in needles:
+        RegSub(needle, replace, fin)
+    return fin
+
 def MDWiki(RenderedMarkdown: str) -> str:
-    ParsedOutput = RegSub(
-        r"<sup class=\"footnote-ref\"",
-        "<sup class=\"footnote-ref\" role=\"doc-noteref\"",
-        RenderedMarkdown
-    )
-    ParsedOutput = RegSub(
-        r"<li id=\"fn-",
-        "<li role=\"doc-footnote\" id=\"fn-",
-        ParsedOutput
-    )
-    ParsedOutput = RegSub(
-        r"<div class=\"footnotes\">\r?\n<hr \/>",
-        "<div class=\"footnotes\">",
-        ParsedOutput
+    ParsedOutput = SubMulti(
+        RenderedMarkdown,
+        (
+            r"<sup class=\"footnote-ref\"",
+            "<sup class=\"footnote-ref\" role=\"doc-noteref\""
+        ),
+        (
+            r"<li id=\"fn-",
+            "<li role=\"doc-footnote\" id=\"fn-",
+        ),
+        (
+            r"<div class=\"footnotes\">\r?\n<hr \/>",
+            "<div class=\"footnotes\">",
+        ),
+        (
+            r"<tg-spoiler>",
+            "<span class=\"spoiler\">",
+        ),
+        (
+            r"</tg-spoiler>",
+            "</span>",
+        ),
     )
     return ParsedOutput
 
