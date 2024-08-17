@@ -15,7 +15,7 @@ A subdomain is a prefix to a domain name, like:
 
 ## Nekoweb subdomain
 On Nekoweb, when registering an account, your username becomes the
-subdomain of the domain nekoweb.org (like https://wiki.nekoweb.org),
+subdomain of the domain nekoweb.org (like [wiki.nekoweb.org](/)),
 what points to your site.
 
 As donator, you can claim multiple subdomains.

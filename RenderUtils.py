@@ -4,7 +4,8 @@ from jinja2 import Environment as JINJA_ENV_INIT, \
 from os import PathLike
 from os.path import join as JoinPath
 from jinja2.environment import Template as JINJA_TEMPLATE
-from re import split as RegSplit
+from re import split as RegSplit, compile as ReCompile
+from config import LINK_PATTERS
 
 JinjaEnv = JINJA_ENV_INIT(
     loader=JINJA_LOADER("views"),
@@ -36,8 +37,12 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
         "strike": None,
         "tg-spoiler": None,
         "latex": None,
+        "link-patterns": None,
     }
-    Rendered = INTERNAL_MD(path, extras=Extras)
+    Rendered = INTERNAL_MD(
+        path, extras=Extras,
+        link_patterns=LINK_PATTERS
+    )
     return Rendered
 
 def TOC(toc_html: str | None, forcenone: bool = False) -> str | None:
