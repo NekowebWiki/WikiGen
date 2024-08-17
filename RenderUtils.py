@@ -40,7 +40,9 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
     Rendered = INTERNAL_MD(path, extras=Extras)
     return Rendered
 
-def TOC(toc_html: str) -> str:
+def TOC(toc_html: str | None, forcenone: bool = False) -> str | None:
+    if toc_html is None or forcenone:
+        return None
     ParsedTOC = toc_html[6:len(toc_html)-6].replace("<ul>", "<ol>").replace("</ul>", "</ol>")
     return ParsedTOC
 

@@ -39,7 +39,12 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         PageTitle = RenderedMD.metadata["title"]
         PageSubtitle = RenderedMD.metadata["subtitle"] if "subtitle" in RenderedMD.metadata else None
-        TableOfContents = TOC(RenderedMD.toc_html)
+        TableOfContents = TOC(
+                            RenderedMD.toc_html,
+                            forcenone=(
+                                (not isarticle) or
+                                (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
+                          ))
         RenderedOut = content.replace(".md", ".html")
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
