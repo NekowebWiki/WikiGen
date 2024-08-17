@@ -12,9 +12,9 @@
 
 [] Minify all pages after having been built.
 [] Use space-saving image formats, WebP, for all images, especially larger ones.
-[~] Use relative URLs for non-external links.
+[x] Use relative URLs for non-external links.
 
 == Content ==
 
-[~] Reformat all content in aforementioned MD format.
+[x] Reformat all content in aforementioned MD format.
 
