@@ -1,4 +1,5 @@
 [] GitHub Actions (wiki acc owner has to add an API token to the secrets)
+[] Update favicon
 
 The following rely on the repo being public
 
