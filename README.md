@@ -15,7 +15,7 @@ Before you can develop this locally, you'll need a few programs:
 ### Get Dependencies
 
 ```bash
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Build
@@ -30,6 +30,8 @@ I do not currently know a good development server for Nekoweb sites,
 bear with me.
 
 ## Directories
+
+<!-- This table is a complete formatting nightmare lol -->
 
 | Repo        | On Nekoweb | Purpose |
 |-------------|------------|---------|
