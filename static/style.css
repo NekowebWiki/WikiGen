@@ -110,7 +110,7 @@ a:active {
   border-radius: 25px;
   padding: 10px;
   width: 100%;
-  height: 480px;
+  height: auto;
   overflow: scroll;
   flex: 1;
 }
