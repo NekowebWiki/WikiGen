@@ -2,7 +2,7 @@ from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, Ge
 from os import listdir
 from os.path import join as JoinPath, isdir
 from MiscUtils import InitDir
-from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY
+from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX
 from distutils.dir_util import copy_tree as CopyDir
 
 DIRECTORIES = {
@@ -58,7 +58,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             Content=WikiRender,
             SourcePrefix=SOURCE_PREFIX,
             Source=JoinPath(input_dir, content),
-            SourceSuffix="",
+            SourceSuffix=SOURCE_SUFFIX,
             CODE_REPOSITORY=CODE_REPOSITORY
         )
 
@@ -90,7 +90,7 @@ def main():
         pages = Indexed,
         SourcePrefix=SOURCE_PREFIX,
         Source="main.py",
-        SourceSuffix="",
+        SourceSuffix=SOURCE_SUFFIX,
         CODE_REPOSITORY=CODE_REPOSITORY
     )
 
