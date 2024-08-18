@@ -104,6 +104,7 @@ a:active {
   padding: 10px;
   width: 160px;
   flex: 0;
+  height: fit-content;
 }
 
 .main {
@@ -111,7 +112,7 @@ a:active {
   border-radius: 25px;
   padding: 10px;
   width: 100%;
-  height: auto;
+  height: 564px;
   overflow: scroll;
   flex: 1;
 }
