@@ -8,3 +8,7 @@ LINK_PATTERS = [
         r"\1"
     )
 ]
+
+CODE_REPOSITORY = "https://github.com/NekowebWiki/WikiGen"
+
+SOURCE_PREFIX = CODE_REPOSITORY + "/blob/main/"
