@@ -1,4 +1,0 @@
-[] Update favicon
-[] Write MD reference   (likely in headpages)
-[] Write contrib. guide (likely in headpages)
-[] LICENSE LICENSE LICENSE LICENSE LICENSE LICENSE
