@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  background-image: url(https://wiki.nekoweb.org/IMG_5598.GIF);
+  background-image: url(/IMG_5598.GIF);
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -36,11 +36,6 @@ a:active {
   color: black;
   text-decoration: none;
 }
-
-.strong {
-  font-weight: bold;
-}
-
 
 /* I uh, 'borrowed' this code from w3schools :p */
 
@@ -117,4 +112,8 @@ a:active {
 
 .main a:link {
   color: black;
+}
+
+blockquote {
+  color: gray;
 }
