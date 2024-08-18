@@ -20,14 +20,14 @@
   </head>
   <body>
     <div class="container">
-      <div class="navbar">
+      <div class="navbar" role="banner">
         <div class="logo">
           <img src="/wiki-logo-new.png" alt="Wiki logo" />
         </div>
         <nav>
           <strong>Navigation</strong>
           <ul>
-            <li><a href="/index.html">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/pages.html">Index</a></li>
             <li><a href="/about.html">About</a></li>
           </ul>
@@ -50,7 +50,7 @@
           ></script>
         </div>
       </div>
-      <div class="main">{% block main %}{% endblock %}</div>
+      <main class="main">{% block main %}{% endblock %}</main>
     </div>
   </body>
 </html>
