@@ -40,3 +40,10 @@ bear with me.
 | `headpages` | `/`        | Parsed/MD directory; pages not under `/w` that still adhear to the formatting: `index`, `about`, `notfound`.|
 | `static`    | `/`        | Static direcotry; static content that doesn't fall under `/i`: wiki background, `style.css`, `elements.css`, favicon, etc. |
 
+## Licensing
+
+* `main.py`, `RenderUtils.py` and `MiscUtils.py` all use the GPL v3-or-later. A copy of this license can be
+  found at `/GPLv3.txt` in the source repository.
+* `config.py` is under the Unlicense. A copy of this license can be found within the file itself.
+* Wiki content is not currently licensed, this is still actively in discussion.
+* Views are not currently licensed, this hasn't been discussed yet, but should be.
