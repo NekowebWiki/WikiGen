@@ -1,11 +1,86 @@
 {% extends "_layout.html" %}
 
+{% block head %}
+{{super()}}
+<script type="module" defer="defer">
+import levenschtein from "/levenshtein.min.js";
+
+const PageIndex = document.querySelector(".page-index");
+const SearchForm = document.querySelector("search form");
+
+function formsubmit() {
+    const searchtext = SearchForm.querySelector("#search").value;
+    history.pushState({ search: searchtext }, document.title, "?search=" + encodeURIComponent(searchtext));
+    sortpagelist(searchtext);
+}
+
+async function sortpagelist(searchtext) {
+    const sortfunc = (a, b) => {
+        if (a[2] > b[2]) return -1;
+        if (a[2] < b[2]) return 1;
+        return 0;
+    };
+    const PagesLevenschtein = await new Promise((res, _) => {
+        let searched = [];
+        const pages = PageIndex.querySelectorAll("li");
+        for (let index = 0; index < pages.length; index++) {
+            const indexitem = pages[index];
+            const searchedtitle = indexitem.dataset.title;
+            
+            searched.push([ searchedtitle, indexitem.dataset.href, levenschtein(searchtext, searchedtitle) ]);
+
+            if (index + 1 === pages.length) {
+                res(searched);
+            }
+        }
+    });
+    PageIndex.innerHTML = "";
+    const sortedpages = PagesLevenschtein.toSorted(sortfunc);
+    for (let index in sortedpages) {
+        const element = sortedpages[index]
+        const Append = document.createElement("li");
+        Append.dataset.title = element[0];
+        Append.dataset.href = element[1];
+        const anchor = document.createElement("a");
+        anchor.href = element[1];
+        anchor.textContent = element[0];
+        Append.appendChild(anchor);
+        PageIndex.appendChild(Append);
+    }
+}
+
+SearchForm.addEventListener("submit", e => {
+    e.preventDefault();
+    formsubmit()
+});
+</script>
+{% endblock %}
+
 {% block main %}
 <h1>Page Index</h1>
 
-<ul>
+<search>
+  <form>
+    <label for="search">
+        Search text
+    </label>
+    <input
+      type="search" id="search"
+      name="search" />
+    <button type="submit" class="searchbutton">
+        Search
+    </button>
+  </form>
+</search>
+
+<ul class="page-index">
     {% for href, title in pages %}
-    <li><a href="{{ href }}">{{ title }}</a></li>
+    <li
+        data-title="{{title}}"
+        data-href="{{href}}"
+    >
+        <a href="{{ href }}">{{ title }}</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

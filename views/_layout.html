@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% block head %}
     <title>{{ PAGE_TITLE }}</title>
     <link
         rel="icon"
@@ -17,6 +18,7 @@
     <meta property="og:description" content="{{ PAGE_TITLE }}" />
     {% endif %}
     <meta property="og:site_name" content="Nekoweb Wiki" />
+    {% endblock %}
   </head>
   <body>
     <div class="container">
