@@ -50,5 +50,6 @@ bear with me.
 * `main.py`, `RenderUtils.py` and `MiscUtils.py` all use the GPL v3-or-later. A copy of this license can be
   found at `/GPLv3.txt` in the source repository.
 * `config.py` is under the Unlicense. A copy of this license can be found within the file itself.
-* Wiki content is not currently licensed, this is still actively in discussion.
+* Wiki content (under `content` and `images`) is licensed under CC BY-SA. A copy is included at `/CC_BY-SA.txt` on the
+  site, and at `/static/CC_BY-SA.txt` in the source repository.
 * Views are not currently licensed, this hasn't been discussed yet, but should be.
