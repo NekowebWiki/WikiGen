@@ -1,5 +1,3 @@
-*This Contributing document is only for `main.py`, `MiscUtils.py`, `RenderUtils.py` and `config.py`. For editing the wiki, see the wiki contribution document(TODO write this).*
-
 # Contributing
 
 Please read through this carefully before submitting anything to this static site generator.
@@ -8,11 +6,11 @@ Please read through this carefully before submitting anything to this static sit
 
 By submitting code to this project, you allow it to be licensed under the license stated in the header of the file.
 
-In the case of `config.py`, this license enforces that what you submit be under the Public Domain, this is to discourage
-utilities (functions, dependencies, etc.) from being placed into the configuration files, which is not where they are
-supposed to go. Other than everything else is under the GPL v3-or-later.
+If the file doesn't have a license in the header, it should be assumed to be unlicensed, meaning it may not allow derivative works.
 
 ## Style Guide
+
+This style guide doesn't apply to wiki content, see the contributing guide on the wiki.
 
 * All function and variable names should either be fully lowercase (`lowercase`) or be in pascal case (`PascalCase`).
 * Use spaces, not tabs, with the indent size set to 4.
