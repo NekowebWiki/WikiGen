@@ -3,10 +3,9 @@
 {% block head %}
 {{super()}}
 <script type="module" defer="defer">
-import levenschtein from "/levenshtein.min.js";
-
 const PageIndex = document.querySelector(".page-index");
 const SearchForm = document.querySelector("search form");
+const AllPages = PageIndex.querySelectorAll("li");
 
 function formsubmit() {
     const searchtext = SearchForm.querySelector("#search").value;
@@ -16,31 +15,40 @@ function formsubmit() {
 
 async function sortpagelist(searchtext) {
     const sortfunc = (a, b) => {
-        if (a[2] > b[2]) return -1;
-        if (a[2] < b[2]) return 1;
+        if (
+            a[0].toLowerCase() == searchtext.toLowerCase()
+        ) return 1
+        if (
+            a[0].toLowerCase().includes(searchtext.toLowerCase()) &&
+            !(b[0].toLowerCase().includes(searchtext.toLowerCase()))
+        ) return -1;
+        if (
+            !(a[0].toLowerCase().includes(searchtext.toLowerCase())) &&
+            b[0].toLowerCase().includes(searchtext.toLowerCase())
+        ) return 1;
         return 0;
     };
-    const PagesLevenschtein = await new Promise((res, _) => {
-        let searched = [];
-        const pages = PageIndex.querySelectorAll("li");
-        for (let index = 0; index < pages.length; index++) {
-            const indexitem = pages[index];
-            const searchedtitle = indexitem.dataset.title;
-            
-            searched.push([ searchedtitle, indexitem.dataset.href, levenschtein(searchtext, searchedtitle) ]);
-
-            if (index + 1 === pages.length) {
-                res(searched);
-            }
-        }
-    });
     PageIndex.innerHTML = "";
-    const sortedpages = PagesLevenschtein.toSorted(sortfunc);
+    const Pages = await new Promise((res, rej) => {
+        let parsed = [];
+        for (let index = 0; index < AllPages.length; index++) {
+            parsed.push([
+                AllPages[index].dataset.title,
+                AllPages[index].dataset.href
+            ]);
+            if (parsed.length == AllPages.length) {
+                res(parsed);
+            }
+        } 
+    });
+    const sortedpages = Pages.toSorted(sortfunc);
     for (let index in sortedpages) {
-        const element = sortedpages[index]
+        const element = sortedpages[index];
+
         const Append = document.createElement("li");
         Append.dataset.title = element[0];
         Append.dataset.href = element[1];
+
         const anchor = document.createElement("a");
         anchor.href = element[1];
         anchor.textContent = element[0];
