@@ -5,3 +5,8 @@ The Nekoweb Wiki is a project dedicated to documenting the free web hosting serv
 
 This wiki is still very work in progress, this page is a good example ;-)
 
+## Useful pages
+
+Below are some useful links:
+
+* [Markdown Reference](/md-ref.md)

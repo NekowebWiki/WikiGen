@@ -52,6 +52,7 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
         "tg-spoiler": None,
         "latex": None,
         "link-patterns": None,
+        "tables": None,
     }
     Rendered = INTERNAL_MD(
         path, extras=Extras,
