@@ -9,4 +9,5 @@ This wiki is still very work in progress, this page is a good example ;-)
 
 Below are some useful links:
 
-* [Markdown Reference](/md-ref.md)
+* [Markdown Reference](/md-ref.html)
+* [Wiki licensing](/license.html)

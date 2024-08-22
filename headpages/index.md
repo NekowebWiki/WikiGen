@@ -13,3 +13,4 @@ suggestions? Join the [Discord](https://discord.gg/f4b4e2Nudk)!
 
 Have a fix or suggestion for the wiki? Both issues and PRs are open on the
 [GitHub repository](https://github.com/nekowebwiki/wikigen).
+
