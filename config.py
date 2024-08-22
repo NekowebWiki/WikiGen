@@ -38,5 +38,7 @@ LINK_PATTERS = [
 
 CODE_REPOSITORY = "https://github.com/NekowebWiki/WikiGen"
 SOURCE_SUFFIX = "?plain=1"
-
 SOURCE_PREFIX = CODE_REPOSITORY + "/blob/main/"
+
+COMMITS_PREFIX = CODE_REPOSITORY + "/commits/main/"
+COMMITS_SUFFIX = ""

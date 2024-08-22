@@ -15,7 +15,7 @@ from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, Ge
 from os import listdir
 from os.path import join as JoinPath, isdir
 from MiscUtils import InitDir
-from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX
+from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX
 from distutils.dir_util import copy_tree as CopyDir
 
 DIRECTORIES = {
@@ -59,6 +59,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
                                 (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
                           ))
         RenderedOut = content.replace(".md", ".html")
+
         WikiRender = MDWiki(RenderedMD)
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
@@ -69,12 +70,14 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             PAGE_DESC=PageSubtitle,
             TableOfContents=TableOfContents,
             Content=WikiRender,
+            ShowPageInfo=True,
             SourcePrefix=SOURCE_PREFIX,
             Source=JoinPath(input_dir, content),
             SourceSuffix=SOURCE_SUFFIX,
-            CODE_REPOSITORY=CODE_REPOSITORY
+            CODE_REPOSITORY=CODE_REPOSITORY,
+            CommitsPrefix=COMMITS_PREFIX,
+            CommitsSuffix=COMMITS_SUFFIX
         )
-
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
 
         if isarticle:
@@ -101,9 +104,7 @@ def main():
         PAGE_DESCRIPTION = "A list of pages on this wiki.",
         PAGE_TYPE = "website",
         pages = Indexed,
-        SourcePrefix=SOURCE_PREFIX,
-        Source="main.py",
-        SourceSuffix=SOURCE_SUFFIX,
+        ShowPageInfo=False,
         CODE_REPOSITORY=CODE_REPOSITORY
     )
 
