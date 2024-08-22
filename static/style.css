@@ -135,3 +135,26 @@ a:active {
   color: black;
 }
 
+input[type=search] {
+  padding-left: 9px;
+  border: 2px solid #33ccff;
+  border-radius: 25px;
+  outline: none;
+}
+
+input[type=search]:focus {
+  border: 2px solid #1ad;
+  border-radius: 25px;
+}
+
+button[type=submit] {
+  background-color: #33ccff;
+  border: 2px solid #33ccff;
+  border-radius: 25px;
+}
+
+button:hover {
+background-color: #1ad;
+border: 2px solid #1ad;
+color: white;
+}
