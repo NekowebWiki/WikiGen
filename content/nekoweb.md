@@ -209,3 +209,7 @@ width="170" height="28"></iframe>
 
 - **16/08/2024**: Dimden announces:
   > Now following page is better, it sorts and groups sites by last updated date. This allows you to actually keep track of updates in sites you follow. That's what following is for, idk why this wasn't done earlier
+
+- **16/08/2024**: Dimden announces:
+  > New API endpoint to check ur rate limit!
+  > Also allowed more zip API requests to donators
