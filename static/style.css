@@ -15,9 +15,9 @@ of the source files, see
 body {
   background-color: white;
   background-image: url(/IMG_5598.GIF);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-attachment: fixed; */
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -86,7 +86,6 @@ a:active {
   padding: 10px;
   width: 100%;
   height: calc(100vh - 76px);
-  /* min-height: calc(100vh - 76px); */
   overflow: scroll;
   flex: 1;
 }
