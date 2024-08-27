@@ -1,0 +1,44 @@
+#show-nav {
+  appearance: none;
+  background-color: #fff;
+  border: #29bef0 solid 5px;
+  border-radius: 20px;
+  padding: 10px;
+  z-index: 99;
+  display: block;
+  position: absolute;
+}
+
+#show-nav::before {
+  content: "VV";
+}
+
+#show-nav:checked::before {
+  content: "^^";
+}
+
+.navbar {
+  position: absolute;
+  display: none;
+  width: calc(100vw - 76px);
+  outline: 20px #29bef0 solid;
+  height: calc(100% - 75px);
+  overflow: scroll;
+}
+
+#show-nav:checked + .container .navbar {
+  display: block;
+}
+
+img {
+  max-width: calc(100% - 20px);
+  height: auto;
+}
+
+.navbar ul {
+  width: auto;
+}
+
+.logo {
+  margin: 0 auto 15px;
+}

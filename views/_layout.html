@@ -21,8 +21,17 @@ of the website source code:
         type="image/png"
         href="https://nekoweb.org/assets/meow.png"
     />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="/wiki-onionring.css" />
+    <link rel="stylesheet" href="/wiki-onionring.css" defer="defer" />
+    <link
+        rel="stylesheet"
+        href="/mobile.css"
+        media="screen and (max-width: 600px)"
+    />
     <meta property="og:type" content="{{ PAGE_TYPE }}" />
     <meta property="og:title" content="{{ PAGE_TITLE }}" />
     {% if PAGE_DESC %}
@@ -34,6 +43,7 @@ of the website source code:
     {% endblock %}
   </head>
   <body>
+    <input type="checkbox" id="show-nav" />
     <div class="container">
       <div class="navbar" role="banner">
         <div class="logo">
