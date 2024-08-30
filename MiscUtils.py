@@ -23,6 +23,7 @@ def InitDir(directory: str, overwrite: bool = True):
     mkdir(directory)
 
 def GenericCopy(path: str, output: str):
+    InitDir(output, overwrite=False)
     if not PathExists(path):
         return
     if isdir(path):
