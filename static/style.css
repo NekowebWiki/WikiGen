@@ -14,11 +14,21 @@ of the source files, see
 */
 body {
   background-color: white;
-  background-image: url(/IMG_5598.GIF);
+  background-image: url(/clouds.png);
   background-repeat: repeat;
-  background-size: contain;
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  animation: shiftbackground 5s linear infinite;
+}
+
+@keyframes shiftbackground {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 400px;
+    /* if the size of the background is changed, change this */
+  }
 }
 
 /*

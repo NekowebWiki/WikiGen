@@ -13,8 +13,8 @@ of this project.
 
 from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate, MDWiki
 from os import listdir
-from os.path import join as JoinPath, isdir
-from MiscUtils import InitDir
+from os.path import join as JoinPath, isdir, exists as PathExists
+from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
 from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX
 from distutils.dir_util import copy_tree as CopyDir
 
@@ -35,6 +35,10 @@ DIRECTORIES = {
     },
     "images": {
         "out": "i",
+        "static": True
+    },
+    "branding": {
+        "out": "",
         "static": True
     }
 }
@@ -83,6 +87,16 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         if isarticle:
             Indexed.append((webout,PageTitle))
 
+def StaticDirectory(directory: str, output: str):
+    build_include, build_exclude = IncludeExclude(directory)
+
+    for file in listdir(directory):
+        CurrentPath = JoinPath(directory, file)
+        FAILURE = IncludeExcludeTest(build_include, build_exclude, CurrentPath)
+        if FAILURE:
+            continue
+        GenericCopy(CurrentPath, output)
+
 def main():
     global Indexed
     InitDir(OUTPUT_DIR)
@@ -91,7 +105,7 @@ def main():
         output = JoinPath(OUTPUT_DIR, info["out"]).replace("\\", "/")
 
         if info["static"]:
-            CopyDir(directory, output)
+            StaticDirectory(directory, output)
             continue
 
         InitDir(output, overwrite=False)
