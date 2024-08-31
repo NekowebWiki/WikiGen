@@ -13,6 +13,11 @@ of the source files, see
     https://github.com/NekowebWiki/WikiGen
 */
 
+search form {
+    display: flex;
+    gap: 5px;
+}
+
 input[type=search] {
   padding-left: 9px;
   border: 2px solid #33ccff;
