@@ -25,7 +25,7 @@ input[type=search]:focus {
   border-radius: 25px;
 }
 
-button[type=submit] {
+button.searchbutton {
   background-color: #33ccff;
   border: 2px solid #33ccff;
   border-radius: 25px;
