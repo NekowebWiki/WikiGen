@@ -22,7 +22,6 @@ Indexed = []
 
 def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articledir": True }):
     global Indexed
-    print(input_dir)
     contents = listdir(input_dir)
     for content in contents:
         if isdir(content):
@@ -32,20 +31,21 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         PageTitle = RenderedMD.metadata["title"]
         PageSubtitle = RenderedMD.metadata["subtitle"] if "subtitle" in RenderedMD.metadata else None
+        ForcedTitle = RenderedMD.metadata["focetitle"] if "forcetitle" in RenderedMD.metadata else None
         TableOfContents = TOC(
                             RenderedMD.toc_html,
                             forcenone=(
                                 (not isarticle) or
                                 (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
-                          ))
+                            )
+                          )
         RenderedOut = content.replace(".md", ".html")
-        print(content, "->", JoinPath(output, RenderedOut))
 
         WikiRender = MDWiki(RenderedMD)
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
             JoinPath(output, RenderedOut),
-            PAGE_TITLE=f"Nekoweb Wiki - {PageTitle}",
+            PAGE_TITLE=f"Nekoweb Wiki - {PageTitle}" if ForcedTitle is None else ForcedTitle,
             PAGE_TYPE=("article" if isarticle else "website"),
             DisplayTitle=PageTitle,
             PAGE_DESC=PageSubtitle,

@@ -11,11 +11,12 @@ All of the following functionallity is provided entirely by [markdown2](https://
 
 Various options may be in the metadata section of the file. Below is all metadata options available.
 
-|    Name    |                                     Usage                                      | Required? |
-|------------|--------------------------------------------------------------------------------|-----------|
-| `title`    | Sets the page title. Used for links and the page header.                       | Yes       |
-| `subtitle` | An additional title, sometimes used as a page description.                     | No        |
-| `notoc`    | Disables the table of contents, defaults to false(table of contents is shown). | No        |
+|    Name       |                                     Usage                                      | Required? |
+|---------------|--------------------------------------------------------------------------------|-----------|
+| `title`       | Sets the page title. Used for links and the page header.                       | Yes       |
+| `subtitle`    | An additional title, sometimes used as a page description.                     | No        |
+| `notoc`       | Disables the table of contents, defaults to false(table of contents is shown). | No        |
+| `forcetitle`  | Force the tab title.                                                           | No        |
 
 ## Basic formatting
 

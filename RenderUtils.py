@@ -115,5 +115,4 @@ def JinjaRender(
 ):
     Rendered = templatein.render(**kwargs)
     with open(outpath, "x", encoding="utf-8") as f:
-        print("writing...")
         f.write(MinHTML(Rendered, keep_comments=True))
