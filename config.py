@@ -42,3 +42,29 @@ SOURCE_PREFIX = CODE_REPOSITORY + "/blob/main/"
 
 COMMITS_PREFIX = CODE_REPOSITORY + "/commits/main/"
 COMMITS_SUFFIX = ""
+
+DIRECTORIES = {
+    "static": {
+        "out": "",
+        "static": True
+    },
+    "content": {
+        "out": "w",
+        "static": False,
+        "articledir": True
+    },
+    "headpages": {
+        "out": "",
+        "static": False,
+        "articledir": False
+    },
+    "images": {
+        "out": "i",
+        "static": True
+    },
+    "branding": {
+        "out": "",
+        "static": True
+    }
+}
+

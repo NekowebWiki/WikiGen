@@ -18,13 +18,19 @@ from os import PathLike
 from os.path import join as JoinPath
 from jinja2.environment import Template as JINJA_TEMPLATE
 from re import split as RegSplit, sub as RegSub
-from config import LINK_PATTERS
 from typing import Pattern as REGEXP
+from config import SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX, LINK_PATTERS
 
 JinjaEnv = JINJA_ENV_INIT(
     loader=JINJA_LOADER("views"),
     autoescape=select_autoescape()
 )
+
+JinjaEnv.globals["SourcePrefix"] = SOURCE_PREFIX
+JinjaEnv.globals["SourceSuffix"] = SOURCE_SUFFIX
+JinjaEnv.globals["CODE_REPOSITORY"] = CODE_REPOSITORY
+JinjaEnv.globals["CommitsPrefix"] = COMMITS_PREFIX
+JinjaEnv.globals["CommitsSuffix"] = COMMITS_SUFFIX
 
 WIKI_PAGE_TEMPLATE = JinjaEnv.get_template("wikipage.html")
 

@@ -15,33 +15,8 @@ from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, Ge
 from os import listdir
 from os.path import join as JoinPath, isdir, exists as PathExists
 from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
-from config import OUTPUT_DIR, SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX
+from config import OUTPUT_DIR, DIRECTORIES
 from distutils.dir_util import copy_tree as CopyDir
-
-DIRECTORIES = {
-    "static": {
-        "out": "",
-        "static": True
-    },
-    "content": {
-        "out": "w",
-        "static": False,
-        "articledir": True
-    },
-    "headpages": {
-        "out": "",
-        "static": False,
-        "articledir": False
-    },
-    "images": {
-        "out": "i",
-        "static": True
-    },
-    "branding": {
-        "out": "",
-        "static": True
-    }
-}
 
 Indexed = []
 
@@ -75,12 +50,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             TableOfContents=TableOfContents,
             Content=WikiRender,
             ShowPageInfo=True,
-            SourcePrefix=SOURCE_PREFIX,
-            Source=JoinPath(input_dir, content),
-            SourceSuffix=SOURCE_SUFFIX,
-            CODE_REPOSITORY=CODE_REPOSITORY,
-            CommitsPrefix=COMMITS_PREFIX,
-            CommitsSuffix=COMMITS_SUFFIX
+            Source=JoinPath(input_dir, content)
         )
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
 
@@ -119,7 +89,6 @@ def main():
         PAGE_TYPE = "website",
         pages = Indexed,
         ShowPageInfo=False,
-        CODE_REPOSITORY=CODE_REPOSITORY
     )
 
 if __name__ == "__main__":
