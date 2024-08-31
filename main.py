@@ -22,6 +22,7 @@ Indexed = []
 
 def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articledir": True }):
     global Indexed
+    print(input_dir)
     contents = listdir(input_dir)
     for content in contents:
         if isdir(content):
@@ -38,6 +39,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
                                 (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
                           ))
         RenderedOut = content.replace(".md", ".html")
+        print(content, "->", JoinPath(output, RenderedOut))
 
         WikiRender = MDWiki(RenderedMD)
         JinjaRender(

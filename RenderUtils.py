@@ -20,6 +20,7 @@ from jinja2.environment import Template as JINJA_TEMPLATE
 from re import split as RegSplit, sub as RegSub
 from typing import Pattern as REGEXP
 from config import SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX, LINK_PATTERS
+from minify_html import minify as MinHTML
 
 JinjaEnv = JINJA_ENV_INIT(
     loader=JINJA_LOADER("views"),
@@ -114,4 +115,5 @@ def JinjaRender(
 ):
     Rendered = templatein.render(**kwargs)
     with open(outpath, "x", encoding="utf-8") as f:
-        f.write(Rendered)
+        print("writing...")
+        f.write(MinHTML(Rendered, keep_comments=True))
