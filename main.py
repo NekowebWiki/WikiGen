@@ -31,7 +31,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         PageTitle = RenderedMD.metadata["title"]
         PageSubtitle = RenderedMD.metadata["subtitle"] if "subtitle" in RenderedMD.metadata else None
-        ForcedTitle = RenderedMD.metadata["focetitle"] if "forcetitle" in RenderedMD.metadata else None
+        ForcedTitle = RenderedMD.metadata["forcetitle"] if "forcetitle" in RenderedMD.metadata else None
         TableOfContents = TOC(
                             RenderedMD.toc_html,
                             forcenone=(
