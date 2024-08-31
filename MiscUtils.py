@@ -22,7 +22,7 @@ def InitDir(directory: str, overwrite: bool = True):
         RMRF(directory)
     mkdir(directory)
 
-def GenericCopy(path: str, output: str):
+def GenericCopy(path: str, output: str, IsFile: bool = False):
     InitDir(output, overwrite=False)
     if not PathExists(path):
         return

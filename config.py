@@ -54,3 +54,7 @@ DIRECTORIES = {
     }
 }
 
+ADD_FILES = {
+    "BSD-3-CLAUSE.txt": "",
+    "CC_BY-SA.txt": ""
+}

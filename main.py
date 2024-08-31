@@ -15,7 +15,7 @@ from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, Ge
 from os import listdir
 from os.path import join as JoinPath, isdir, exists as PathExists
 from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
-from config import OUTPUT_DIR, DIRECTORIES
+from config import OUTPUT_DIR, DIRECTORIES, ADD_FILES
 from distutils.dir_util import copy_tree as CopyDir
 
 Indexed = []
@@ -70,6 +70,9 @@ def StaticDirectory(directory: str, output: str):
 def main():
     global Indexed
     InitDir(OUTPUT_DIR)
+
+    for source, dest in ADD_FILES.items():
+        GenericCopy(source, JoinPath(OUTPUT_DIR, dest))
 
     for directory, info in DIRECTORIES.items():
         output = JoinPath(OUTPUT_DIR, info["out"]).replace("\\", "/")
