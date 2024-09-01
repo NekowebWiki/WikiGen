@@ -89,10 +89,18 @@ def main():
     JinjaRender(
         GetTemplate("pageindex.html"),
         JoinPath("build", "pages.html"),
-        PAGE_TITLE = "Page Index",
+        PAGE_TITLE = "Nekoweb Wiki - Page Index",
         PAGE_DESCRIPTION = "A list of pages on this wiki.",
         PAGE_TYPE = "website",
         pages = Indexed,
+        ShowPageInfo=False,
+    )
+    JinjaRender(
+        GetTemplate("guestbook.html"),
+        JoinPath("build", "guestbook.html"),
+        PAGE_TITLE = "Nekoweb Wiki - Guestbook",
+        PAGE_DESCRIPTION = "Sign the wiki guestbook!",
+        PAGE_TYPE = "website",
         ShowPageInfo=False,
     )
 
