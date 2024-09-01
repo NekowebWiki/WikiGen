@@ -6,7 +6,6 @@
   color: #000;
   font-size: 12px;
   border-radius: 15px;
-  animation: linear infinite wikibganimate 5s;
 }
 .site-box > a > p {
   color:#000;
@@ -14,8 +13,4 @@
 }
 .site-box > a > span{
   color:#000;
-}
-@keyframes wikibganimate {
-  0%{background-position-x: 0;}
-  to{background-position-x: 200px;}
 }
