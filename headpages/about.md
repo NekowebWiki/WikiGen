@@ -11,4 +11,4 @@ Below are some useful links:
 
 * [Contribution guide](/contributing.html)
 * [Markdown Reference](/md-ref.html)
-* [Wiki licensing](/license.html)
+* [Wiki licensing](/copying.html)
