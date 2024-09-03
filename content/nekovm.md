@@ -23,14 +23,10 @@ Currently, you can launch NekoVM 1 time per 1 minute. But if you are a donator, 
   > terminal. you can launch your site in terminal about once per minute
   > (opening site in terminal counts to import/export zip rate limit
   > which is currently 1 time per 1 minute (2 times for donators))
-  > 
   > i extremely recommend you watch video i made about me building demo
   > Svelte app using Nekoweb Terminal to see how cool this thing is:
-  >
   > https://lune.dimden.dev/4085d4ed0d4a.mp4
-  >
   > (video embed below)
-  >
   > while NekoVM is still Beta, this update log marks Nekoweb Release™️,
   > yea if u didnt notice nekoweb was still beta all this time. nekoweb
   > has been running for almost 2 months now and most of issues have
