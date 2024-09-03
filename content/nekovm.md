@@ -1,5 +1,5 @@
 ---
-title: Nekoweb
+title: NekoVM
 subtitle: This article covers the NekoVM.
 ---
 ## What is NekoVM?
