@@ -154,6 +154,8 @@ started on August 26 2022, and was in development for 2 years.
   > been fixed and things seem to run nicely. i hope itll continue to be
   > this way thats all for now! check the video!!!!! its awesome
 
+- 08/04/24: Nekoweb is no longer in Beta.
+
 - **23/04/2024**: Dimden announces that Nekoweb hit 3000 users.
 - **05/05/2024**: Dimden announces:
 
