@@ -217,7 +217,8 @@ width="170" height="28"></iframe>
 - **02/09/2024**: Dimden announces:
   > Hoster that hosts Nekoweb server is having some serious issues, so we are currently down too. So we've decided to switch          server ASAP to a new hoster that will be much more stable and shouldn't have any downtimes. New server will also be much more     powerful and larger, so we will be able to grow for a very long time without any worries.
 
-    We expect it to be back up today, and then we'll be able to safely switch to new hoster with all current data. But if hoster      won't be up within a day, we'll use our last backup that might be up to 12 hours old. Then we'll be able to bring back any        edits you did in last 12 hours upon support request, once original hoster is back up.
+  > We expect it to be back up today, and then we'll be able to safely switch to new hoster with all current data. But if hoster      won't be up within a day, we'll use our last backup that might be up to 12 hours old. Then we'll be able to bring back any        edits you did in last 12 hours upon support request, once original hoster is back up.
+  
   > Nekoweb is back up! This means we can safely move to new server with current data.
 
 ## Resources used
