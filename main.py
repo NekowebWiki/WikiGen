@@ -45,6 +45,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
             JoinPath(output, RenderedOut),
+            LANG="en",
             PAGE_TITLE=f"Nekoweb Wiki - {PageTitle}" if ForcedTitle is None else ForcedTitle,
             PAGE_TYPE=("article" if isarticle else "website"),
             DisplayTitle=PageTitle,
@@ -92,6 +93,7 @@ def main():
         PAGE_TITLE = "Nekoweb Wiki - Page Index",
         PAGE_DESCRIPTION = "A list of pages on this wiki.",
         PAGE_TYPE = "website",
+        LANG="en",
         pages = Indexed,
         ShowPageInfo=False,
     )
@@ -101,6 +103,7 @@ def main():
         PAGE_TITLE = "Nekoweb Wiki - Guestbook",
         PAGE_DESCRIPTION = "Sign the wiki guestbook!",
         PAGE_TYPE = "website",
+        LANG="en",
         ShowPageInfo=False,
     )
 
