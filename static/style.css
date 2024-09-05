@@ -151,12 +151,11 @@ a:active {
   background-color: #33ccff;
   border-radius: 25px;
   width: 160px;
-  height: 160px;
-  margin-bottom: 5px;
+  height: 150px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
-
 
