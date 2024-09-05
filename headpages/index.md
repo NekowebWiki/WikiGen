@@ -15,3 +15,13 @@ suggestions? Join the [Discord](https://discord.gg/f4b4e2Nudk)!
 Have a fix or suggestion for the wiki? Both issues and PRs are open on the
 [GitHub repository](https://github.com/nekowebwiki/wikigen).
 
+## Link to the wiki!
+
+To link to the wiki, you can add the wiki button.
+
+<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.webp" width="81" height="33"></a>
+
+```html
+<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.webp" width="81" height="33"></a>
+```
+
