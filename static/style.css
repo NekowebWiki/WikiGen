@@ -14,7 +14,7 @@ of the source files, see
 */
 body {
   background-color: white;
-  background-image: url(/background.png);
+  background-image: url(/background.webp);
   background-repeat: repeat;
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -150,13 +150,13 @@ a:active {
 .logo {
   background-color: #33ccff;
   border-radius: 25px;
-  padding: 10px;
-  width: 140px;
-  height: 130px;
-  margin-bottom: 15px;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 
