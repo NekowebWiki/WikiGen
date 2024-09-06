@@ -17,6 +17,7 @@ from os.path import join as JoinPath, isdir, exists as PathExists
 from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
 from config import OUTPUT_DIR, DIRECTORIES, ADD_FILES
 from distutils.dir_util import copy_tree as CopyDir
+from syntaxcolors import AddSyntaxColors
 
 Indexed = []
 
@@ -106,6 +107,7 @@ def main():
         LANG="en",
         ShowPageInfo=False,
     )
+    AddSyntaxColors()
 
 if __name__ == "__main__":
     main()
