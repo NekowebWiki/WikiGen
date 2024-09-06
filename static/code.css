@@ -17,7 +17,11 @@ of the source files, see
   margin: 0;
 }
 
-.codehilite {
+code {
+  display: inline-block;
+}
+
+.codehilite, code {
   background-color: #7b8888;
   color: #fff;
   padding: 5px

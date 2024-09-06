@@ -24,7 +24,7 @@ Various options may be in the metadata section of the file. Below is all metadat
 |-------|---------|---------|
 | Bold  | `**Bold**` | **Bold** |
 | Italics | `*Italics*` | *Italics* |
-| Strike | `~~strike-through~~`| ~~strike-through~~ |
+| Strike | `~~strike-through~~` | ~~strike-through~~ |
 
 ## Links and Images
 
