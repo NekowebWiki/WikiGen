@@ -14,7 +14,7 @@ of the source files, see
 */
 body {
   background-color: white;
-  background-image: url(/background.webp);
+  background-image: url(/background.png);
   background-repeat: repeat;
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
