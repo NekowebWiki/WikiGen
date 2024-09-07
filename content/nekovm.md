@@ -26,9 +26,9 @@ Currently, you can launch NekoVM 1 time per 1 minute. But if you are a donator, 
   > * you can now remove .html from your links! this was a very requested feature and now its here, you can enable this in site settings
   > * theres now support for setting custom HTTP headers for donators, also in settings!
   >
-  > while NekoVM is still Beta, this update log marks Nekoweb Release&trade;, yea if u didnt notice nekoweb was still beta all this time. nekoweb has been running for almost 2 months now and most of issues have been fixed and things seem to run nicely. i hope itll continue to be this way
+  > while NekoVM is still Beta, this update log marks Nekoweb Release&#x2122;, yea if u didnt notice nekoweb was still beta all this time. nekoweb has been running for almost 2 months now and most of issues have been fixed and things seem to run nicely. i hope itll continue to be this way
   >
-  > thats all for now! check the video!!!!! its awesome 
+  > thats all for now! check the video!!!!! its awesome
 
 ## Resources used
 * https://nekoweb.org/
