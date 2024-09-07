@@ -25,10 +25,12 @@ class WikiCode(PygmentsStyle):
         Token: "",
         Comment: "#ccc",
         Keyword: "#f00",
-        Name: "#0af",
         String: "italic #f99",
         Number: "",
-        Operator: "#e9f"
+        Operator: "#e9f",
+
+        Name: "#47baff",
+        Name.Attribute: "#b0e5ff",
     }
 
 def AddSyntaxColors():
