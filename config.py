@@ -56,7 +56,8 @@ DIRECTORIES = {
 
 ADD_FILES = {
     "BSD-3-CLAUSE.txt": "",
-    "CC_BY-SA.txt": ""
+    "CC_BY-SA.txt": "",
+    "CNVPL.txt": ""
 }
 
 COPYRIGHT_NOTICE = """Copyright 2024 Nekoweb Wiki

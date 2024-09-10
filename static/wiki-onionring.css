@@ -1,9 +1,23 @@
-/* onionring.js is made up of four files - onionring-widget.js, onionring-index.js, onionring-variables.js and onionring.css (this one!)
-// it's licensed under the cooperative non-violent license (CNPL) v4+ (https://thufie.lain.haus/NPL.html)
-// it was originally made by joey + mord of allium (蒜) house, last updated 2020-10-24 */
+/*
+Copyright (C) 2020 joey + mord of allium (蒜) house; modification by Nekoweb Wiki
+
+This project is non-violent software: you can use, redistribute, and/or modify it
+under the terms of the CNPLv7+.
+
+You should've received a copy of the CNPLv7, if you haven't, you can find one at
+
+    https://git.pixie.town/thufie/npl-builder
+
+Otherwise, you can find a copy in the root directory of the source files
+
+    https://github.com/nekowebwiki/wikigen
+
+project comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+See the CNPL for details.
+
+*/
 
 /* === ONIONRING.CSS === */
-/* this file affects the style of the widget. remember to replace all instances of #webringid with whatever value you have for ringID in the onionring-widget.js file. make sure it still has the # at the front, though! probably easiest to use find+replace to do it */
 
 #nekowebring table {
   background: #33ccff;
