@@ -1,6 +1,7 @@
 ---
 title: Nekoweb
 subtitle: This article covers the free static web hosting Nekoweb.
+desc: Nekoweb is a free static (HTML5, CSS3, JavaScript) web hosting service.
 ---
 ## What is Nekoweb?
 

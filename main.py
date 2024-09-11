@@ -30,28 +30,43 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             continue
         isarticle = rawinfo["articledir"]
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
-        PageTitle = RenderedMD.metadata["title"]
-        PageSubtitle = RenderedMD.metadata["subtitle"] if "subtitle" in RenderedMD.metadata else None
-        ForcedTitle = RenderedMD.metadata["forcetitle"] if "forcetitle" in RenderedMD.metadata else None
+        metadata = RenderedMD.metadata
+
+        PageTitle = metadata["title"]
+        Title = (
+                    metadata["forcetitle"]
+                    if "forcetitle" in metadata
+                    else f"Nekoweb Wiki - {PageTitle}"
+                )
+
+        PageSubtitle = metadata["subtitle"] if "subtitle" in metadata else None
+        Description = metadata["desc"] if "desc" in metadata else PageSubtitle
+
         TableOfContents = TOC(
-                            RenderedMD.toc_html,
-                            forcenone=(
-                                (not isarticle) or
-                                (RenderedMD.metadata["notoc"] if "notoc" in RenderedMD.metadata else False)
-                            )
+                              RenderedMD.toc_html,
+                              forcenone=(
+                                  metadata["notoc"] if "notoc" in metadata else False
+                              )
                           )
         RenderedOut = content.replace(".md", ".html")
-
-        WikiRender = MDWiki(RenderedMD)
+        
+        WikiRender, options = MDWiki(
+                RenderedMD,
+                {
+                    "toc": TableOfContents,
+                    "DEBUG__Title": Title
+                }
+            )
         JinjaRender(
             WIKI_PAGE_TEMPLATE,
             JoinPath(output, RenderedOut),
             LANG="en",
-            PAGE_TITLE=f"Nekoweb Wiki - {PageTitle}" if ForcedTitle is None else ForcedTitle,
+            PAGE_TITLE=Title,
             PAGE_TYPE=("article" if isarticle else "website"),
             DisplayTitle=PageTitle,
-            PAGE_DESC=PageSubtitle,
-            TableOfContents=TableOfContents,
+            PAGE_DESC=Description,
+            PAGE_SUBTITLE=PageSubtitle,
+            TableOfContents=TableOfContents if not options["manualtoc"] else None,
             Content=WikiRender,
             ShowPageInfo=True,
             Source=JoinPath(input_dir, content)
@@ -92,7 +107,7 @@ def main():
         GetTemplate("pageindex.html"),
         JoinPath("build", "pages.html"),
         PAGE_TITLE = "Nekoweb Wiki - Page Index",
-        PAGE_DESCRIPTION = "A list of pages on this wiki.",
+        PAGE_DESC = "A list of pages on this wiki.",
         PAGE_TYPE = "website",
         LANG="en",
         pages = Indexed,
@@ -102,7 +117,7 @@ def main():
         GetTemplate("guestbook.html"),
         JoinPath("build", "guestbook.html"),
         PAGE_TITLE = "Nekoweb Wiki - Guestbook",
-        PAGE_DESCRIPTION = "Sign the wiki guestbook!",
+        PAGE_DESC = "Sign the wiki guestbook!",
         PAGE_TYPE = "website",
         LANG="en",
         ShowPageInfo=False,

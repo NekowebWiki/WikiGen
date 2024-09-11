@@ -15,15 +15,10 @@ of this project.
 {% block main %}
 <hgroup role="group">
     <h1>{{ DisplayTitle if DisplayTitle else PAGE_TITLE }}</h1>
-    {% if PAGE_DESC %}<p role="doc-subtitle">{{ PAGE_DESC }}</p>{% endif %}
+    {% if PAGE_SUBTITLE %}<p role="doc-subtitle">{{ PAGE_SUBTITLE }}</p>{% endif %}
 </hgroup>
 {% if TableOfContents %}
-<nav role="doc-toc" class="table-of-contents">
-    <h2>Contents</h2>
-    <ol role="directory">
-        {{ TableOfContents|safe }}
-    </ol>
-</nav>
+{{TableOfContents|safe}}
 {% endif %}
 {{ Content|safe }}{% endblock %}
 

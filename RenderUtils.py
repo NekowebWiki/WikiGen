@@ -17,7 +17,7 @@ from jinja2 import Environment as JINJA_ENV_INIT, \
 from os import PathLike
 from os.path import join as JoinPath
 from jinja2.environment import Template as JINJA_TEMPLATE
-from re import split as RegSplit, sub as RegSub
+from re import split as RegSplit, sub as RegSub, match as RegMatch
 from typing import Pattern as REGEXP
 from config import SOURCE_PREFIX, CODE_REPOSITORY, SOURCE_SUFFIX, COMMITS_PREFIX, COMMITS_SUFFIX, LINK_PATTERS
 from minify_html import minify as MinHTML
@@ -69,44 +69,57 @@ def RenderMarkdown(path: str) -> UnicodeWithAttrs:
 
 def SubMulti(
     haystack: str,
-    *needles: tuple[str | REGEXP, str]
+    *needles: tuple[str | REGEXP, str, str]
 ) -> str:
     fin = haystack
-    for needle, replace in needles:
-        RegSub(needle, replace, fin)
-    return fin
+    matched: dict[str, bool] = {}
+    for needle, replace, identity in needles:
+        prefin = fin
+        fin = RegSub(needle, replace, fin)
+        matched[identity] = prefin != fin
+    return fin, matched
 
-def MDWiki(RenderedMarkdown: str) -> str:
-    ParsedOutput = SubMulti(
+def MDWiki(RenderedMarkdown: str, options: dict[str, str]) -> tuple[str, dict[str, any]]:
+    ParsedOutput, matched = SubMulti(
         RenderedMarkdown,
-        (
-            r"<sup class=\"footnote-ref\"",
-            "<sup class=\"footnote-ref\" role=\"doc-noteref\""
-        ),
-        (
-            r"<li id=\"fn-",
-            "<li role=\"doc-footnote\" id=\"fn-",
-        ),
         (
             r"<div class=\"footnotes\">\r?\n<hr \/>",
             "<div class=\"footnotes\">",
+            "footnotes"
         ),
         (
             r"<tg-spoiler>",
             "<span class=\"spoiler\">",
+            "tg-1"
         ),
         (
             r"</tg-spoiler>",
             "</span>",
+            "tg-2"
+        ),
+        (
+            r"<place-toc ?(?:/>|></place-toc>)",
+            options["toc"] if options["toc"] is not None else "",
+            "toc"
         ),
     )
-    return ParsedOutput
+    Options = {
+        "manualtoc": matched["toc"]
+    }
+    return ParsedOutput, Options
 
 def TOC(toc_html: str | None, forcenone: bool = False) -> str | None:
     if toc_html is None or forcenone:
         return None
     ParsedTOC = toc_html[6:len(toc_html)-6].replace("<ul>", "<ol>").replace("</ul>", "</ol>")
-    return ParsedTOC
+    return f"""
+<nav class="table-of-contents">
+    <h2>Contents</h2>
+    <ol role="directory">
+        {ParsedTOC}
+    </ol>
+</nav>"""
+
 
 def JinjaRender(
     templatein: JINJA_TEMPLATE,

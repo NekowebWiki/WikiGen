@@ -7,6 +7,8 @@ This wiki uses an extended version of Markdown to generate pages. Here's a refer
 
 All of the following functionallity is provided entirely by [markdown2](https://github.com/trentm/python-markdown2).
 
+<place-toc />
+
 ## Metadata
 
 Various options may be in the metadata section of the file. Below is all metadata options available.
@@ -17,6 +19,7 @@ Various options may be in the metadata section of the file. Below is all metadat
 | `subtitle`    | An additional title, sometimes used as a page description.                     | No        |
 | `notoc`       | Disables the table of contents, defaults to false(table of contents is shown). | No        |
 | `forcetitle`  | Force the tab title.                                                           | No        |
+| `desc`        | Set the page description (open graph and normal meta).                         | No        |
 
 ## Basic formatting
 
@@ -75,3 +78,17 @@ Note that tables don't need good formatting to work. This works just fine:
 This wiki includes a way to render LaTeX equations to MathML. Simply surround LaTeX with `$$...$$` or `$...$`.
 
 <!-- Nothing provided right now, if somebody does know how to use LaTeX to, I'd appriciate a PR! -->
+
+## TOC Placement
+
+Although it'd be nice if the table of contents were to place itself directly after the first section, it unforchunately doesn't. If you would like to put it there, then you need to use the `<place-toc />` tag.
+
+```md
+Opening section
+
+<place-toc />
+
+## Next
+
+## 2
+```
