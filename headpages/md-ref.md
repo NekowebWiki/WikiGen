@@ -77,7 +77,15 @@ Note that tables don't need good formatting to work. This works just fine:
 
 This wiki includes a way to render LaTeX equations to MathML. Simply surround LaTeX with `$$...$$` or `$...$`.
 
-<!-- Nothing provided right now, if somebody does know how to use LaTeX to, I'd appriciate a PR! -->
+```latex
+$$
+y = \sqrt{x^2*\frac{z^3}{a*2}}+8
+$$
+```
+
+$$
+y = \sqrt{x^2*\frac{z^3}{a*2}}+8
+$$
 
 ## TOC Placement
 
