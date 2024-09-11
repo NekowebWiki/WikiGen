@@ -13,14 +13,35 @@ of the source files, see
     https://github.com/NekowebWiki/WikiGen
 */
 
+const QueryParams = new URLSearchParams(location.search);
+
+const SearchForm = document.querySelector("form");
+
+const RandomButton = document.querySelector(".randompage");
+
 const PageIndex = document.querySelector(".page-index");
-const SearchForm = document.querySelector("search form");
 const AllPages = PageIndex.querySelectorAll("li");
 
 function formsubmit() {
     const searchtext = SearchForm.querySelector("#search").value;
-    history.pushState({ search: searchtext }, document.title, "?search=" + encodeURIComponent(searchtext));
+    history.pushState({ search: searchtext }, document.title, "?q=" + encodeURIComponent(searchtext));
     sortpagelist(searchtext);
+}
+
+function listpages() {
+  PageIndex.innerHTML = "";
+  return new Promise((res, rej) => {
+      let parsed = [];
+      for (let index = 0; index < AllPages.length; index++) {
+          parsed.push([
+              AllPages[index].dataset.title,
+              AllPages[index].dataset.href
+          ]);
+          if (parsed.length == AllPages.length) {
+              res(parsed);
+          }
+      } 
+  });
 }
 
 async function sortpagelist(searchtext) {
@@ -38,19 +59,7 @@ async function sortpagelist(searchtext) {
         ) return 1;
         return 0;
     };
-    PageIndex.innerHTML = "";
-    const Pages = await new Promise((res, rej) => {
-        let parsed = [];
-        for (let index = 0; index < AllPages.length; index++) {
-            parsed.push([
-                AllPages[index].dataset.title,
-                AllPages[index].dataset.href
-            ]);
-            if (parsed.length == AllPages.length) {
-                res(parsed);
-            }
-        } 
-    });
+    const Pages = await listpages();
     const sortedpages = Pages.toSorted(sortfunc);
     for (let index in sortedpages) {
         const element = sortedpages[index];
@@ -67,8 +76,29 @@ async function sortpagelist(searchtext) {
     }
 }
 
+async function getrandompage(fullredirect=false) {
+    const Pages = await listpages();
+    const randomindex = Math.floor(Math.random() * Pages.length);
+    const randompage = Pages[randomindex];
+    if (fullredirect) {
+        location.replace(randompage[1]);
+        return;
+    }
+    location.href = randompage[1];
+}
+
 SearchForm.addEventListener("submit", e => {
     e.preventDefault();
     formsubmit();
 });
+RandomButton.addEventListener("click", () => {
+    getrandompage(false);
+});
 
+if (QueryParams.has("q")) {
+    SearchForm.querySelector("input").value = decodeURIComponent(QueryParams.get("q"));
+    formsubmit();
+}
+if (QueryParams.has("rand")) {
+    getrandompage(true);
+}

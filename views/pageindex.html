@@ -23,10 +23,10 @@ of this project.
 {% block main %}
 <h1>Page Index</h1>
 
-<search>
-  <form>
+<form>
+  <search style="display:inline-block;margin-right:5px">
     <label for="search">
-        Search text
+       Search text
     </label>
     <input
       type="search" id="search"
@@ -34,8 +34,9 @@ of this project.
     <button type="submit" class="searchbutton">
         Search
     </button>
-  </form>
-</search>
+  </search>
+  <button type="button" class="randompage">Random Page</button>
+</form>
 
 <ul class="page-index">
     {% for href, title in pages %}
