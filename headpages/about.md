@@ -1,5 +1,6 @@
 ---
-title: About Nekoweb Wiki
+title: About
+notoc: true
 ---
 The Nekoweb Wiki is a project dedicated to documenting the free web hosting service [Nekoweb](/w/nekoweb.html). All content in this wiki is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license.
 

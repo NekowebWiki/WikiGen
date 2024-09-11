@@ -1,6 +1,8 @@
 ---
 title: Contributing to the Nekoweb Wiki
 subtitle: A guide on how to contribute to this wiki.
+desc: How to contribute to the Nekoweb Wiki
+notoc: true
 ---
 The Nekoweb Wiki encourages everyone to contribute! Here is a guide on how to contribute.
 

@@ -1,6 +1,7 @@
 ---
 title: Welcome to the Nekoweb Wiki!
 forcetitle: Nekoweb Wiki
+notoc: true
 ---
 This wiki is dedicated to [Nekoweb](/w/nekoweb.html), a free static
 web hosting service started in 2024, targeted to creating personal websites.
