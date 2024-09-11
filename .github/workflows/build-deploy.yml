@@ -9,7 +9,6 @@ permissions:
 
 jobs:
     build:
-        if: "contains(github.event.head_commit.message, '#action/build-deploy')"
         runs-on: ubuntu-latest
         strategy:
           matrix:
@@ -38,3 +37,20 @@ jobs:
                 CLEANUP: "False"
                 DELAY: "0.5"
                 NEKOWEB_PAGENAME: "wiki"
+    deploy:
+      if: "contains(github.event.head_commit.message, '#action/build-deploy')"
+      needs: [build]
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          python-version: [ "3.12" ]
+      steps:
+        - name: Deploy to Nekoweb
+          uses: mp-pinheiro/nekoweb-deploy@main
+          with:
+            API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
+            BUILD_DIR: "./build"
+            DEPLOY_DIR: "/"
+            CLEANUP: "False"
+            DELAY: "0.5"
+            NEKOWEB_PAGENAME: "wiki"
