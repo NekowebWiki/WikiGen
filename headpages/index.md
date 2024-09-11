@@ -25,4 +25,3 @@ To link to the wiki, you can add the wiki button.
 ```html
 <a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.png" width="81" height="33"></a>
 ```
-

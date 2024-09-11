@@ -54,7 +54,6 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
                 RenderedMD,
                 {
                     "toc": TableOfContents,
-                    "DEBUG__Title": Title
                 }
             )
         JinjaRender(
@@ -73,8 +72,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         )
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
 
-        if isarticle:
-            Indexed.append((webout,PageTitle))
+        Indexed.append((webout,PageTitle,input_dir))
 
 def StaticDirectory(directory: str, output: str):
     build_include, build_exclude = IncludeExclude(directory)

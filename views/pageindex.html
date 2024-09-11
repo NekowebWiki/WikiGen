@@ -39,13 +39,15 @@ of this project.
 </form>
 
 <ul class="page-index">
-    {% for href, title in pages %}
+    {% for href, title, group in pages %}
+    {% if group == "content" %}
     <li
         data-title="{{title}}"
         data-href="{{href}}"
     >
         <a href="{{ href }}">{{ title }}</a>
     </li>
+    {% endif %}
     {% endfor %}
 </ul>
 {% endblock %}
