@@ -25,15 +25,9 @@ Nekoweb supports 3 types of subdomains: Text only, Numbers only, Text
 and numbers, and dashed.
 
 ## Nested subdomains on Nekoweb
-You can add nested subdomains as a Nekoweb subdomain (As of 14/5/24),
-but they does not work when trying to access them, and give this
-error:
+You can add nested subdomains as a Nekoweb subdomain (As of 14/5/24), but they're inaccessible, as most browsers prevent the page from loading. You'll likely see an error about the server, Nekoweb, and the client, your browser, not having a common encyption algorithm. 
 
-<img
-  src="/i/secure-conn-failed.png"
-  width="414"
-  height="178"
-/>
+<figure markdown="1" style="float:right;width:414px"><img src="/i/secure-conn-failed.png" width="414" height="178"/><figcaption markdown="1">`SSL_ERROR_NO_CYPHER_OVERLAP` error, as seen in Firefox, and Firefox derived, web browser.</figcaption></figure>
 
 ## Character Limit
 
