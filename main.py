@@ -67,8 +67,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             PAGE_SUBTITLE=PageSubtitle,
             TableOfContents=TableOfContents if not options["manualtoc"] else None,
             Content=WikiRender,
-            ShowPageInfo=True,
-            Source=JoinPath(input_dir, content)
+            Source=JoinPath(input_dir, content).replace("\\", "/")
         )
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
 
@@ -109,7 +108,6 @@ def main():
         PAGE_TYPE = "website",
         LANG="en",
         pages = Indexed,
-        ShowPageInfo=False,
     )
     JinjaRender(
         GetTemplate("guestbook.html"),
@@ -118,7 +116,6 @@ def main():
         PAGE_DESC = "Sign the wiki guestbook!",
         PAGE_TYPE = "website",
         LANG="en",
-        ShowPageInfo=False,
     )
     AddSyntaxColors()
 

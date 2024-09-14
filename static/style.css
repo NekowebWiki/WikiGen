@@ -100,6 +100,31 @@ a:active {
   flex: 1;
 }
 
+/* Layout > heading */
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header hgroup {
+    flex: 0;
+}
+
+header .tools {
+    flex: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 5px;
+}
+
+header .tools li {
+    list-style: none;
+    display: inline-block;
+}
+
 
 /* Navigation side-bar */
 

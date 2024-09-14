@@ -13,10 +13,24 @@ of this project.
 {% extends "_layout.html" %}
 
 {% block main %}
-<hgroup role="group">
-    <h1>{{ DisplayTitle if DisplayTitle else PAGE_TITLE }}</h1>
-    {% if PAGE_SUBTITLE %}<p role="doc-subtitle">{{ PAGE_SUBTITLE }}</p>{% endif %}
-</hgroup>
+<header>
+    <hgroup role="group">
+        <h1>{{ DisplayTitle if DisplayTitle else PAGE_TITLE }}</h1>
+        {% if PAGE_SUBTITLE %}<p role="doc-subtitle">{{ PAGE_SUBTITLE }}</p>{% endif %}
+    </hgroup>
+    <ul role="toolbar" class="tools">
+        <li>
+            <a
+                href="{{SourcePrefix}}{{Source}}{{SourceSuffix}}"
+            />Source</a>
+        </li>
+        <li>
+            <a
+                href="{{CommitsPrefix}}{{Source}}{{CommitsSuffix}}"
+            />History</a>
+        </li>
+    </ul>
+</header>
 {% if TableOfContents %}
 {{TableOfContents|safe}}
 {% endif %}
