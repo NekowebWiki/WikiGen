@@ -20,8 +20,8 @@ Have a fix or suggestion for the wiki? Both issues and PRs are open on the
 
 To link to the wiki, you can add the wiki button.
 
-<a href="/"><img src="/button.png" width="81" height="33"></a>
+<a href="/"><img src="/button.png" width="81" height="33" alt="Nekoweb Wiki"></a>
 
 ```html
-<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.png" width="81" height="33"></a>
+<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.png" width="81" height="33" alt="Nekoweb Wiki"></a>
 ```
