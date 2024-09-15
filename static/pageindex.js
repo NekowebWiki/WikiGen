@@ -13,14 +13,16 @@ of the source files, see
     https://github.com/NekowebWiki/WikiGen
 */
 
+import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.mjs'
+
+const PageIndex = document.querySelector(".page-index");
+const AllPages = PageIndex.querySelectorAll("li");
+
 const QueryParams = new URLSearchParams(location.search);
 
 const SearchForm = document.querySelector("form");
 
 const RandomButton = document.querySelector(".randompage");
-
-const PageIndex = document.querySelector(".page-index");
-const AllPages = PageIndex.querySelectorAll("li");
 
 function formsubmit() {
     const searchtext = SearchForm.querySelector("#search").value;
@@ -33,10 +35,11 @@ function listpages() {
   return new Promise((res, rej) => {
       let parsed = [];
       for (let index = 0; index < AllPages.length; index++) {
-          parsed.push([
-              AllPages[index].dataset.title,
-              AllPages[index].dataset.href
-          ]);
+          parsed.push({
+              "title": AllPages[index].dataset.title,
+              "href":  AllPages[index].dataset.href,
+              //"desc": AllPages[index].dataset.desc
+          });
           if (parsed.length == AllPages.length) {
               res(parsed);
           }
@@ -45,33 +48,34 @@ function listpages() {
 }
 
 async function sortpagelist(searchtext) {
-    const sortfunc = (a, b) => {
-        if (
-            a[0].toLowerCase() == searchtext.toLowerCase()
-        ) return 1
-        if (
-            a[0].toLowerCase().includes(searchtext.toLowerCase()) &&
-            !(b[0].toLowerCase().includes(searchtext.toLowerCase()))
-        ) return -1;
-        if (
-            !(a[0].toLowerCase().includes(searchtext.toLowerCase())) &&
-            b[0].toLowerCase().includes(searchtext.toLowerCase())
-        ) return 1;
-        return 0;
-    };
     const Pages = await listpages();
-    const sortedpages = Pages.toSorted(sortfunc);
-    for (let index in sortedpages) {
-        const element = sortedpages[index];
+    const fuse = new Fuse(
+        Pages,
+        {
+            threshold: 1,
+            keys: [
+              "title",
+              //"desc"
+            ]
+        }
+    );
+    const sortedpages = fuse.search(searchtext)
+    for (let index = 0; index < sortedpages.length; index++) {
+        const element = sortedpages[index].item;
 
         const Append = document.createElement("li");
-        Append.dataset.title = element[0];
-        Append.dataset.href = element[1];
+        Append.dataset.title = element.title;
+        Append.dataset.href = element.href;
+        //Append.dataset.desc = element.desc
+
+        //const paragraph = document.createElement("p");
+        //paragraph.innerHTML = element.desc
 
         const anchor = document.createElement("a");
-        anchor.href = element[1];
-        anchor.textContent = element[0];
+        anchor.href = element.href;
+        anchor.textContent = element.title;
         Append.appendChild(anchor);
+        //Append.appendChild(paragraph);
         PageIndex.appendChild(Append);
     }
 }
