@@ -71,7 +71,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         )
         webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
 
-        Indexed.append((webout,PageTitle,input_dir))
+        Indexed.append((webout,PageTitle,input_dir,Description))
 
 def StaticDirectory(directory: str, output: str):
     build_include, build_exclude = IncludeExclude(directory)

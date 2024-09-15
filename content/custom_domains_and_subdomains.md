@@ -1,5 +1,6 @@
 ---
 title: Custom domains and subdomains
+desc: Domains using Nekoweb
 ---
 ## Custom domain(s)
 With Nekoweb, you have the ability to add your own custom domain(s) to

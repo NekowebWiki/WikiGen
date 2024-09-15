@@ -38,7 +38,7 @@ function listpages() {
           parsed.push({
               "title": AllPages[index].dataset.title,
               "href":  AllPages[index].dataset.href,
-              //"desc": AllPages[index].dataset.desc
+              "desc": AllPages[index].dataset.desc
           });
           if (parsed.length == AllPages.length) {
               res(parsed);
@@ -55,7 +55,7 @@ async function sortpagelist(searchtext) {
             threshold: 1,
             keys: [
               "title",
-              //"desc"
+              "desc"
             ]
         }
     );
@@ -66,16 +66,19 @@ async function sortpagelist(searchtext) {
         const Append = document.createElement("li");
         Append.dataset.title = element.title;
         Append.dataset.href = element.href;
-        //Append.dataset.desc = element.desc
+        Append.dataset.desc = element.desc
 
-        //const paragraph = document.createElement("p");
-        //paragraph.innerHTML = element.desc
+        const paragraph = document.createElement("p");
+        paragraph.innerHTML = element.desc
 
+        const strong = document.createElement("strong");
         const anchor = document.createElement("a");
         anchor.href = element.href;
         anchor.textContent = element.title;
-        Append.appendChild(anchor);
-        //Append.appendChild(paragraph);
+        strong.appendChild(anchor);
+
+        Append.appendChild(strong);
+        Append.appendChild(paragraph);
         PageIndex.appendChild(Append);
     }
 }
