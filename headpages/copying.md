@@ -9,7 +9,7 @@ The wiki source code, meaning wiki-specific HTML, CSS, and JavaScript, is under 
 
 ## Attributions
 
-The following materials were modified from external sources:
+The following materials were based on external resources:
 
 * [`/CC_BY-SA.svg`](/CC_BY-SA.svg) is a modified version of the CC BY-SA 4.0 [badge released by Creative Commons](https://creativecommons.org/mission/downloads/#badges). In the spirit of the license such file is licensed under, this modified version is also under CC BY-4.0. The changes include:
   * Removing the background and border;

@@ -13,7 +13,7 @@ of the source files, see
     https://github.com/NekowebWiki/WikiGen
 */
 
-import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.mjs'
+import Fuse from "/fuse.mjs";
 
 const PageIndex = document.querySelector(".page-index");
 const AllPages = PageIndex.querySelectorAll("li");
