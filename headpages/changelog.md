@@ -3,9 +3,14 @@ title: Site changelog
 ---
 A site changelog for the Nekoweb wiki!
 
-Note that all dates written here are in UTC.
+Note that all dates written here are in UTC, and are formatted as year month day (where month is the short english month name, and day is zero padded until it is 2 digits in length).
 
 <place-toc/>
+
+## 2024 Sep 18
+
+* Added changelog, and updated RSS feed to use the changelog rather than Git commits.
+* Change to elements.css
 
 ## 2024 Sep 17
 
