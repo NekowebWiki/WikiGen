@@ -122,7 +122,9 @@ def main():
     )
     AddSyntaxColors()
 
-    commits = list(repo.iter_commits("main", max_count=10))
+    commits = list(repo.iter_commits("main", max_count=50))
+
+    Releases = []
 
     RSSFeed = \
     "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +\
@@ -132,14 +134,22 @@ def main():
            f"<link>{SITE_URL}</link>" +\
             "<lang>en-us</lang>"
     for commit in commits:
-        message = commit.message.replace("<", "&lt;").replace(">", "&gt;").splitlines()
-        body = "\n".join(message)
-        subject = message[0]
+        if len(Releases) == 10:
+            break
+        if "#action/build-deploy" not in commit.message:
+            continue
+        ChangelogId = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%Y-%b-%d").lower()
+        if ChangelogId in Releases:
+            continue
+        Releases.append(ChangelogId)
+
+        subject = "Site update!"
+        body = "See link for details."
 
         author = commit.author.name
         date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
-        commitlink = COMMIT_PREFIX + str(commit) + COMMIT_SUFFIX
+        commitlink = SITE_URL + "changelog.html#" + ChangelogId
 
         RSSFeed += \
             "<item>" +\
@@ -147,7 +157,7 @@ def main():
                 f"<link>{commitlink}</link>" +\
                 f"<description>{body}</description>" +\
                 f"<pubDate>{date}</pubDate>" +\
-                f"<guid>{str(commit)}</guid>" +\
+                f"<guid>{ChangelogId}</guid>" +\
             "</item>"
     RSSFeed += \
     "</channel>" +\
