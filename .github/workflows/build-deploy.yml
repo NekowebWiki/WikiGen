@@ -26,9 +26,7 @@ jobs:
               with:
                 path: "requirements.txt"
             - name: Pull Changes
-              run: |
-                git pull
-                git log -10
+              run: git pull
             - name: Build Site
               run: python main.py
             - name: Archive production artifacts
