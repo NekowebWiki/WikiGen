@@ -6,15 +6,9 @@ notoc: true
 This wiki is dedicated to [Nekoweb](/w/nekoweb.html), a free static
 web hosting service started in 2024, targeted to creating personal websites.
 
-## Join the Discord
+## Contribute and Community
 
-Want to get notified when the site is updated, and/or you have some
-suggestions? Join the [Discord](https://discord.gg/f4b4e2Nudk)!
-
-## Contribute on GitHub
-
-Have a fix or suggestion for the wiki? Both issues and PRs are open on the
-[GitHub repository](https://github.com/nekowebwiki/wikigen).
+This wiki has a public [Discord server](https://discord.gg/f4b4e2Nudk), and is full free and open source on [GitHub](https://github.com/nekowebwiki/wikigen)! You can join the Discord for site updates, or to make suggests; and you can go to the GitHub to submit articles or changes to articles. Feel free to check either of those out!
 
 ## Link to the wiki!
 
