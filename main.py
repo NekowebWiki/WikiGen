@@ -10,7 +10,6 @@ if you did not, a copy can be found at the following
 Otherwise, a copy of this license can be found in the root directory
 of this project.
 """
-
 from git import Repo
 from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate, MDWiki
 from os import listdir
@@ -19,9 +18,9 @@ from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
 from config import OUTPUT_DIR, DIRECTORIES, ADD_FILES, COMMIT_PREFIX, COMMIT_SUFFIX, SITE_URL
 from distutils.dir_util import copy_tree as CopyDir
 from syntaxcolors import AddSyntaxColors
-from datetime import datetime
+from datetime import datetime, UTC as UTC_TIMESTAMP
 
-repo = Repo(dirname(realpath(__file__)))
+repo = Repo()
 
 Indexed = []
 
@@ -138,7 +137,7 @@ def main():
         subject = message[0]
 
         author = commit.author.name
-        date = datetime.utcfromtimestamp(commit.authored_date).strftime("%Y-%m-%dt%H:%M:%Sz")
+        date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%Y-%m-%dt%H:%M:%Sz")
 
         commitlink = COMMIT_PREFIX + str(commit) + COMMIT_SUFFIX
 

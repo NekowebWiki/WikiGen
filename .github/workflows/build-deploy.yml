@@ -26,6 +26,7 @@ jobs:
             - name: Pull Changes
               run: |
                 git pull
+                git log -10
             - name: Build Site
               run: python main.py
             - name: Archive production artifacts
