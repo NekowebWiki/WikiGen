@@ -137,7 +137,7 @@ def main():
         subject = message[0]
 
         author = commit.author.name
-        date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%Y-%m-%dt%H:%M:%Sz")
+        date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%a, %d %b %Y %H:%M:%S GMT")
 
         commitlink = COMMIT_PREFIX + str(commit) + COMMIT_SUFFIX
 
