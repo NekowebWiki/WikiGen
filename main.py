@@ -142,14 +142,16 @@ def main():
         commitlink = COMMIT_PREFIX + str(commit) + COMMIT_SUFFIX
 
         RSSFeed += \
-        "<item>" +\
-            f"<title>{subject}</title>" +\
-            f"<link>{commitlink}</link>" +\
-            f"<description>{body}</description>" +\
-            f"<pubDate>{date}</pubDate>" +\
-            f"<guid>{str(commit)}</guid>" +\
-        "</item>"
-    RSSFeed += "</channel></rss>"
+            "<item>" +\
+                f"<title>{subject}</title>" +\
+                f"<link>{commitlink}</link>" +\
+                f"<description>{body}</description>" +\
+                f"<pubDate>{date}</pubDate>" +\
+                f"<guid>{str(commit)}</guid>" +\
+            "</item>"
+    RSSFeed += \
+    "</channel>" +\
+    "</rss>"
     with open(JoinPath(OUTPUT_DIR, "feed.xml"), "w", encoding="utf-8") as file:
         file.write(RSSFeed)
 
