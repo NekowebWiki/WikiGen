@@ -30,6 +30,9 @@ SOURCE_PREFIX = CODE_REPOSITORY + "/blob/main/"
 COMMITS_PREFIX = CODE_REPOSITORY + "/commits/main/"
 COMMITS_SUFFIX = ""
 
+COMMIT_PREFIX = CODE_REPOSITORY + "/commit/"
+COMMIT_SUFFIX = ""
+
 DIRECTORIES = {
     "static": {
         "out": "",
@@ -60,6 +63,8 @@ ADD_FILES = {
     "CC_BY-SA.txt": "",
     "CNPL.txt": "",
 }
+
+SITE_URL = "https://wiki.nekoweb.org/"
 
 COPYRIGHT_NOTICE = """Copyright 2024 Nekoweb Wiki
 

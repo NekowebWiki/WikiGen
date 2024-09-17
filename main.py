@@ -11,13 +11,17 @@ Otherwise, a copy of this license can be found in the root directory
 of this project.
 """
 
+from git import Repo
 from RenderUtils import JinjaRender, RenderMarkdown, WIKI_PAGE_TEMPLATE, TOC, GetTemplate, MDWiki
 from os import listdir
-from os.path import join as JoinPath, isdir, exists as PathExists
+from os.path import join as JoinPath, isdir, exists as PathExists, dirname, realpath
 from MiscUtils import InitDir, IncludeExclude, IncludeExcludeTest, GenericCopy
-from config import OUTPUT_DIR, DIRECTORIES, ADD_FILES
+from config import OUTPUT_DIR, DIRECTORIES, ADD_FILES, COMMIT_PREFIX, COMMIT_SUFFIX, SITE_URL
 from distutils.dir_util import copy_tree as CopyDir
 from syntaxcolors import AddSyntaxColors
+from datetime import datetime
+
+repo = Repo(dirname(realpath(__file__)))
 
 Indexed = []
 
@@ -118,6 +122,37 @@ def main():
         LANG="en",
     )
     AddSyntaxColors()
+
+    commits = list(repo.iter_commits("main", max_count=10))
+
+    RSSFeed = \
+    "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +\
+    "<rss version=\"2.0\">" +\
+        "<channel>" +\
+            "<title>Nekoweb Wiki</title>" +\
+           f"<link>{SITE_URL}</link>" +\
+            "<lang>en-us</lang>"
+    for commit in commits:
+        message = commit.message.replace("<", "&lt;").replace(">", "&gt;").splitlines()
+        body = "\n".join(message)
+        subject = message[0]
+
+        author = commit.author.name
+        date = datetime.utcfromtimestamp(commit.authored_date).strftime("%Y-%m-%dt%H:%M:%Sz")
+
+        commitlink = COMMIT_PREFIX + str(commit) + COMMIT_SUFFIX
+
+        RSSFeed += \
+        "<item>" +\
+            f"<title>{subject}</title>" +\
+            f"<link>{commitlink}</link>" +\
+            f"<description>{body}</description>" +\
+            f"<pubDate>{date}</pubDate>" +\
+            f"<guid>{str(commit)}</guid>" +\
+        "</item>"
+    RSSFeed += "</channel></rss>"
+    with open(JoinPath(OUTPUT_DIR, "feed.xml"), "w", encoding="utf-8") as file:
+        file.write(RSSFeed)
 
 if __name__ == "__main__":
     main()
