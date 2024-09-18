@@ -86,6 +86,48 @@ def StaticDirectory(directory: str, output: str):
             continue
         GenericCopy(CurrentPath, output)
 
+def WriteFeed(CommitBase, ReleaseMessage = "#action/build-deploy"):
+    commits = list(CommitBase)
+
+    Releases = []
+
+    RSSFeed = ""
+    for commit in commits:
+        if len(Releases) == 10:
+            break
+        if ReleaseMessage not in commit.message:
+            continue
+        ChangelogId = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%Y-%b-%d").lower()
+        if ChangelogId in Releases:
+            continue
+        Releases.append(ChangelogId)
+
+        author = commit.author.name
+        date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%a, %d %b %Y %H:%M:%S GMT")
+
+        commitlink = SITE_URL + "changelog.html#" + ChangelogId
+        
+        RSSFeed += \
+            "<item>" +\
+                f"<title>Site update!</title>" +\
+                f"<link>{commitlink}</link>" +\
+                f"<description>See link for details.</description>" +\
+                f"<pubDate>{date}</pubDate>" +\
+                f"<guid>{ChangelogId}</guid>" +\
+            "</item>"
+    RSSFeed = \
+    "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +\
+    "<rss version=\"2.0\">" +\
+        "<channel>" +\
+            "<title>Nekoweb Wiki</title>" +\
+           f"<link>{SITE_URL}</link>" +\
+            "<lang>en-us</lang>" +\
+            RSSFeed +\
+        "</channel>" +\
+    "</rss>"
+    return RSSFeed
+
+
 def main():
     global Indexed
     InitDir(OUTPUT_DIR)
@@ -122,46 +164,9 @@ def main():
     )
     AddSyntaxColors()
 
-    commits = list(repo.iter_commits("main", max_count=50))
-
-    Releases = []
-
-    RSSFeed = \
-    "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" +\
-    "<rss version=\"2.0\">" +\
-        "<channel>" +\
-            "<title>Nekoweb Wiki</title>" +\
-           f"<link>{SITE_URL}</link>" +\
-            "<lang>en-us</lang>"
-    for commit in commits:
-        if len(Releases) == 10:
-            break
-        if "#action/build-deploy" not in commit.message:
-            continue
-        ChangelogId = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%Y-%b-%d").lower()
-        if ChangelogId in Releases:
-            continue
-        Releases.append(ChangelogId)
-
-        subject = "Site update!"
-        body = "See link for details."
-
-        author = commit.author.name
-        date = datetime.fromtimestamp(commit.authored_date, UTC_TIMESTAMP).strftime("%a, %d %b %Y %H:%M:%S GMT")
-
-        commitlink = SITE_URL + "changelog.html#" + ChangelogId
-
-        RSSFeed += \
-            "<item>" +\
-                f"<title>{subject}</title>" +\
-                f"<link>{commitlink}</link>" +\
-                f"<description>{body}</description>" +\
-                f"<pubDate>{date}</pubDate>" +\
-                f"<guid>{ChangelogId}</guid>" +\
-            "</item>"
-    RSSFeed += \
-    "</channel>" +\
-    "</rss>"
+    RSSFeed = WriteFeed(
+        CommitBase = repo.iter_commits("main", max_count=50)
+    )
     with open(JoinPath(OUTPUT_DIR, "feed.xml"), "w", encoding="utf-8") as file:
         file.write(RSSFeed)
 
