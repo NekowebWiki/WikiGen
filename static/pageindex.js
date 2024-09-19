@@ -88,10 +88,10 @@ async function getrandompage(fullredirect=false) {
     const randomindex = Math.floor(Math.random() * Pages.length);
     const randompage = Pages[randomindex];
     if (fullredirect) {
-        location.replace(randompage[1]);
+        location.replace(randompage.href);
         return;
     }
-    location.href = randompage[1];
+    location.href = randompage.href;
 }
 
 SearchForm.addEventListener("submit", e => {
