@@ -1,4 +1,17 @@
+# Stuff build either by Python or the SSG
 __pycache__
 build
+# Testing servers
 _site
 .jekyll-cache
+# Code editors
+.replit
+replit.toml
+.vscode
+
+# Generally do not include dotfiles
+.*
+
+## Except for these
+!.gitignore
+
