@@ -1,18 +1,17 @@
 /*sitebox*/
 .site-box {
-  background:#6ac8e8 url(https://wiki.nekoweb.org/background-animated.svg) repeat;
-  background-size:200px;
-  text-align:center;color:#000;
-  font-size:12px;border-radius:15px;
-  font-family:Verdana
+  background: #6ac8e8 url(https://wiki.nekoweb.org/background-animated.svg) repeat;
+  background-size: 200px;
+  text-align: center;color: #000;
+  font-size: 12px;border-radius: 15px;
 }
-.site-box > a > p {color: #000;font-weight:700;font-family:Verdana}
-.site-box > a > span {color:#000;font-family:Verdana}
-.sitefeature {
-  background:center no-repeat url(https://wiki.nekoweb.org/logo.png);
-  border:none;
+.site-box > a > p {color: #000;font-weight: 700}
+.site-box > a > span {color:#000}
+.site-box .sitefeature {
+  background: center no-repeat url(https://wiki.nekoweb.org/logo.png);
+  border: none;
 }
-.sitefeature img {opacity:0}
+.site-box .sitefeature img {opacity:0}
 /*Follow button*/
 .follow {
   display:block;color:#000;
@@ -23,7 +22,6 @@
   margin-bottom:5px;
   border:none;width:100%;
   font-family:Verdana,Geneva,Tahoma,sans-serif !important;
-  text-align:left;font-size:16px
+  text-align:left;font-size:16px;
 }
-.follow .on-nekoweb {font-size:11px}
-.follow.following .on-nekoweb {display:none}
+.follow .on-nekoweb {font-size:11px;}
