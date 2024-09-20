@@ -42,7 +42,15 @@ of this project.
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/mode/overlay.min.js"
 ></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"
+></script>
+<style>
+#viewspace {
+    border: 1px solid black;
+}
+</style>
 <script>
 
 const PyRender = `
@@ -189,33 +197,18 @@ function UsableOutput(output) {
 {% endblock %}
 
 {% block main %}
-<div id="viewspace">
-    <template>
-        <header>
-            <hgroup role="group">
-                <h1 data-role="title"></h1>
-                <p data-role="subtitle"></p>
-            </hgroup>
-            <ul role="toolbar" class="tools">
-                <li>
-                    <a
-                        href="#"
-                    />Source</a>
-                </li>
-                <li>
-                    <a
-                        href="#"
-                    />History</a>
-                </li>
-            </ul>
-        </header>
-    </template>
-</div>
+<div
+    id="viewspace"
+    style="display:none"
+></div>
 <div id="editspace"></div>
 <div role="toolbar" id="tools">
     <p>
         <button onclick="RenderMD()">Render</button>
         Warning! Really laggy!
+    </p>
+    <p>
+        <button onclick="exportpatch()">Export .diff</button>
     </p>
 </div>
 <script>
@@ -257,12 +250,7 @@ function CodeEditor() {
     const LikelyPath = GetLikelyPagePath(Path);
     const GetContent = RawURL + LikelyPath;
 
-    editorenv.filename = LikelyPath;
-
-    editorcodemirror = CodeMirror(document.querySelector("#editspace"), {
-        lineNumbers: true,
-        tabSize: 2,
-        value: `---
+    const content = `---
 title: About
 notoc: true
 ---
@@ -277,7 +265,15 @@ Below are some useful links:
 * [Contribution guide](/contributing.html)
 * [Markdown Reference](/md-ref.html)
 * [Wiki licensing](/copying.html)
-`,
+`
+
+    editorenv.oldcontent = content;
+    editorenv.filename = LikelyPath;
+
+    editorcodemirror = CodeMirror(document.querySelector("#editspace"), {
+        lineNumbers: true,
+        tabSize: 2,
+        value: content,
         mode: "gfm",
     });
 }
@@ -291,7 +287,21 @@ async function RenderMD() {
             )
         )
     );
+    document.querySelector("#viewspace").style.display = "initial";
     document.querySelector("#viewspace").innerHTML = Output;
+}
+
+function exportpatch() {
+    const newcontent = editorcodemirror.getValue();
+    const diff = Diff.createPatch(editorenv.filename, editorenv.oldcontent, newcontent);
+    
+    const tempanchor = document.createElement("a")
+    tempanchor.href = "data:text/plain;charset=utf-8," + encodeURIComponent(diff);
+    tempanchor.setAttribute("download", editorenv.filename.split("/").slice(-1)[0].replace(".md", ".diff"));
+    tempanchor.display = "none";
+    document.body.appendChild(tempanchor);
+    tempanchor.click();
+    document.body.removeChild(tempanchor);
 }
 
 function GetLikelyPagePath(page) {
