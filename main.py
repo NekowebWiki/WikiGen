@@ -165,7 +165,7 @@ def main():
     AddSyntaxColors()
 
     RSSFeed = WriteFeed(
-        CommitBase = repo.iter_commits("main", max_count=50)
+        CommitBase = repo.iter_commits("HEAD", max_count=50)
     )
     with open(JoinPath(OUTPUT_DIR, "feed.xml"), "w", encoding="utf-8") as file:
         file.write(RSSFeed)
