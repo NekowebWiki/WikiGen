@@ -7,6 +7,12 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Sep 20
+
+* Revert accidental reverted of sitebox change.
+* Fixed bug affecting the random page button in the Page Index.
+* RSS feed should contain more elements.
+
 ## 2024 Sep 18
 
 * Added changelog, and updated RSS feed to use the changelog rather than Git commits.
