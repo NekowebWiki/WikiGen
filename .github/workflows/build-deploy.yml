@@ -1,8 +1,7 @@
 name: Build and Deploy site to Nekoweb
 
 on:
-  push:
-    branches: [ "main" ]
+  push
 
 permissions: 
   contents: write
@@ -34,7 +33,7 @@ jobs:
               with:
                 path: build
     deploy:
-      if: "contains(github.event.head_commit.message, '#action/build-deploy')"
+      if: "contains(github.event.head_commit.message, '#action/build-deploy') && github.ref == 'refs/heads/main'"
       needs: [build]
       runs-on: ubuntu-latest
       strategy:
