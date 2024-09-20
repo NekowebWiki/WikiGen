@@ -246,26 +246,11 @@ async function SetupPython() {
     return PyodideCached;
 }
 
-function CodeEditor() {
+async function CodeEditor() {
     const LikelyPath = GetLikelyPagePath(Path);
     const GetContent = RawURL + LikelyPath;
 
-    const content = `---
-title: About
-notoc: true
----
-The Nekoweb Wiki is a project dedicated to documenting the free web hosting service [Nekoweb](/w/nekoweb.html). All content in this wiki is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license.
-
-This wiki is still very work in progress, this page is a good example ;-)
-
-## Useful pages
-
-Below are some useful links:
-
-* [Contribution guide](/contributing.html)
-* [Markdown Reference](/md-ref.html)
-* [Wiki licensing](/copying.html)
-`
+    const content = await fetch(GetContent).then(res => res.text());
 
     editorenv.oldcontent = content;
     editorenv.filename = LikelyPath;
