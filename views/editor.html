@@ -1,0 +1,319 @@
+{#
+Copyright 2024 Nekoweb Wiki
+
+This software is licensed under the 3-clause BSD license.
+You should have recieved a copy of such license with this software,
+if you did not, a copy can be found at the following
+
+    https://opensource.org/license/BSD-3-Clause
+
+Otherwise, a copy of this license can be found in the root directory
+of this project.
+#}
+{% extends "_layout.html" %}
+
+{% block head %}
+{{ super() }}
+<link
+    rel="stylesheet"
+    href="/forms.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
+/>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/7.0.0/diff.min.js"
+></script>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+></script>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/markdown/markdown.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/gfm/gfm.min.js"
+></script>
+<script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/mode/overlay.min.js"
+></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+<script>
+
+const PyRender = `
+from markdown2 import markdown as INTERNAL_MD, UnicodeWithAttrs
+from json import dumps
+from re import split as RegSplit, sub as RegSub, match as RegMatch, compile as ReCompile, X as ReX
+from typing import Pattern as REGEXP
+
+LINK_PATTERS = [
+    (
+        ReCompile(r"""\\b((?:https?://|(?<!//)www\\.)\\w[\\w_\\-]*(?:\\.\\w[\w_\\-]*)*[^<>\\s"']*(?<![?!.,:*_~);])(?=[?!.,:*_~);]?(?:[<\\s]|$)))""", ReX),
+        r"\\1"
+    )
+]
+
+
+def RenderMarkdown(md: str) -> UnicodeWithAttrs:
+    """
+    Returned value has 3 "states" (you could say):
+
+    Val          (rendered md)
+    Val.metadata (file metadata)
+    Val.toc_html (table of contents)
+
+    I'm mainly adding this note so I don't forget
+    """
+    Extras = {
+        "toc": None,
+        "metadata": None,
+        "footnotes": None,
+        "cuddled-lists": None,
+        "fenced-code-blocks": None,
+        "markdown-in-html": None,
+        "strike": None,
+        "tg-spoiler": None,
+        "latex": None,
+        "link-patterns": None,
+        "tables": None,
+    }
+    Rendered = INTERNAL_MD(
+        md, extras=Extras,
+        link_patterns=LINK_PATTERS
+    )
+    return Rendered
+
+def SubMulti(
+    haystack: str,
+    *needles: tuple[str | REGEXP, str, str]
+) -> str:
+    fin = haystack
+    matched: dict[str, bool] = {}
+    for needle, replace, identity in needles:
+        prefin = fin
+        fin = RegSub(needle, replace, fin)
+        matched[identity] = prefin != fin
+    return fin, matched
+
+def MDWiki(RenderedMarkdown: str, options: dict[str, str]) -> tuple[str, dict[str, any]]:
+    ParsedOutput, matched = SubMulti(
+        RenderedMarkdown,
+        (
+            r"<div class=\\"footnotes\\">\\r?\\n<hr />",
+            "<div class=\\"footnotes\\">",
+            "footnotes"
+        ),
+        (
+            r"<tg-spoiler>",
+            "<span class=\\"spoiler\\">",
+            "tg-1"
+        ),
+        (
+            r"</tg-spoiler>",
+            "</span>",
+            "tg-2"
+        ),
+        (
+            r"<place-toc ?(?:/>|></place-toc>)",
+            options["toc"] if options["toc"] is not None else "",
+            "toc"
+        ),
+    )
+    Options = {
+        "manualtoc": matched["toc"]
+    }
+    return ParsedOutput, Options
+
+def TOC(toc_html: str | None, forcenone: bool = False) -> str | None:
+    if toc_html is None or forcenone:
+        return None
+    ParsedTOC = toc_html[6:len(toc_html)-6].replace("<ul>", "<ol>").replace("</ul>", "</ol>")
+    return f"""
+<nav class="table-of-contents">
+    <h2>Contents</h2>
+    <ol role="directory">
+        {ParsedTOC}
+    </ol>
+</nav>"""
+
+def FinalRender(md: str):
+  initmd = RenderMarkdown(md)
+  wikimd, options = MDWiki(initmd, { "toc": initmd.toc_html })
+  return dumps({
+    "rendered": wikimd,
+    "options": options,
+    "toc": initmd.toc_html,
+    "metadata": initmd.metadata
+  })
+
+`
+
+function UsableOutput(output) {
+    var subtitle = "";
+    if ("subtitle" in output.metadata) {
+        subtitle = `<p>${output.metadata["subtitle"]}</p>`;
+    } else if ("desc" in output.metadata) {
+        subtitle = `<p>${output.metadata["subtitle"]}</p>`;
+    }
+
+    var TOC = output.toc_html;
+    if ("manualtoc" in output.options) TOC = ""
+
+    return `<header>
+        <hgroup role="group">
+            <h1>${output.metadata["title"]}</h1>
+            ${subtitle}
+        </hgroup>
+        <ul role="toolbar" class="tools">
+            <li>
+                <a
+                    href="#"
+                />Source</a>
+            </li>
+            <li>
+                <a
+                    href="#"
+                />History</a>
+            </li>
+        </ul>
+    </header>
+    ${TOC}
+    ${output.rendered}`;
+}
+</script>
+{% endblock %}
+
+{% block main %}
+<div id="viewspace">
+    <template>
+        <header>
+            <hgroup role="group">
+                <h1 data-role="title"></h1>
+                <p data-role="subtitle"></p>
+            </hgroup>
+            <ul role="toolbar" class="tools">
+                <li>
+                    <a
+                        href="#"
+                    />Source</a>
+                </li>
+                <li>
+                    <a
+                        href="#"
+                    />History</a>
+                </li>
+            </ul>
+        </header>
+    </template>
+</div>
+<div id="editspace"></div>
+<div role="toolbar" id="tools">
+    <p>
+        <button onclick="RenderMD()">Render</button>
+        Warning! Really laggy!
+    </p>
+</div>
+<script>
+const Params = new URLSearchParams(location.search);
+const RawURL = "https://raw.githubusercontent.com/NekowebWiki/WikiGen/refs/heads/main";
+
+var editorenv = {
+    "oldcontent": "",
+    "filename": ""
+}
+var editorcodemirror;
+var PyodideCached;
+
+const Path = Params.get("path");
+if (Path !== null) {
+    CodeEditor()
+} else {
+    location = "/";
+}
+
+async function SetupPython() {
+    if (!PyodideCached) {
+        const pyodide = await loadPyodide();
+
+        await pyodide.loadPackage("micropip");
+
+        const micropip = await pyodide.pyimport("micropip");
+    
+        await micropip.install("markdown2");
+        await micropip.install("latex2mathml");
+
+        PyodideCached = pyodide;
+    }
+
+    return PyodideCached;
+}
+
+function CodeEditor() {
+    const LikelyPath = GetLikelyPagePath(Path);
+    const GetContent = RawURL + LikelyPath;
+
+    editorenv.filename = LikelyPath;
+
+    editorcodemirror = CodeMirror(document.querySelector("#editspace"), {
+        lineNumbers: true,
+        tabSize: 2,
+        value: `---
+title: About
+notoc: true
+---
+The Nekoweb Wiki is a project dedicated to documenting the free web hosting service [Nekoweb](/w/nekoweb.html). All content in this wiki is licensed under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en) license.
+
+This wiki is still very work in progress, this page is a good example ;-)
+
+## Useful pages
+
+Below are some useful links:
+
+* [Contribution guide](/contributing.html)
+* [Markdown Reference](/md-ref.html)
+* [Wiki licensing](/copying.html)
+`,
+        mode: "gfm",
+    });
+}
+
+async function RenderMD() {
+    const pyodide = await SetupPython();
+    const Output = UsableOutput(
+        JSON.parse(
+            await pyodide.runPython(
+                PyRender + `FinalRender("""${editorcodemirror.getValue().replace("\"", "\\\"")}""")`
+            )
+        )
+    );
+    document.querySelector("#viewspace").innerHTML = Output;
+}
+
+function GetLikelyPagePath(page) {
+    if (page == "")
+        return "/headpages/index.md"
+
+    var likelyfilename = page.replace(".html", ".md");
+    if (!likelyfilename.endsWith(".md"))
+        likelyfilename += ".md";
+
+    if (likelyfilename.startsWith("w/"))
+        return likelyfilename.replace("w/", "/content/");
+    return "/headpages/" + likelyfilename;
+}
+
+/*
+window.addEventListener("beforeunload", function (e) {
+    var confirmationMessage = "Uh-oh! You may have unsaved changes. Make sure to export your changes before leaving!";
+
+    (e || window.event).returnValue = confirmationMessage;
+    return confirmationMessage;
+});
+*/
+</script>
+{% endblock %}
