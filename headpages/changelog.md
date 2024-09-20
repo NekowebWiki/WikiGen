@@ -9,7 +9,7 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 ## 2024 Sep 20
 
-* Revert accidental reverted of sitebox change.
+* Revert accidental reverted sitebox change.
 * Fixed bug affecting the random page button in the Page Index.
 * RSS feed should contain more elements.
 
