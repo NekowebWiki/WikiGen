@@ -8,7 +8,7 @@ done.
 ## Contributing
 
 * For contributing to the static site generator, please read [`CONTRIBUTING.md`](CONTRIBUTING.md).
-* A contributing guide for the wiki itself is still WIP.
+* For contributing to the wiki, please see [the dedicated wikipage](https://wiki.nekoweb.org/contributing.html).
 
 ## Local Development
 
