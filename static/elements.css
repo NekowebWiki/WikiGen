@@ -23,5 +23,6 @@
   font-family:Verdana,Geneva,Tahoma,sans-serif !important;
   text-align:left;font-size:16px
 }
+.follow:hover {background:#1ad}
 .follow .on-nekoweb {font-size:11px;}
 .follow.following .on-nekoweb {display:none}
