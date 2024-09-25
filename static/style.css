@@ -158,7 +158,7 @@ header .tools li {
   background-color: transparant;
 }
 
-.navbar li a {
+.navbar :is(li a:is(:link,:visited,:active), .menu-dropdown summary) {
   display: block;
   border-radius: 25px;
   color: black;
@@ -168,17 +168,37 @@ header .tools li {
   margin-bottom: 5px;
 }
 
-.navbar li a:hover {
+.navbar :is(li a, .menu-dropdown summary, .navbar .menu-dropdown-body button):hover {
   background-color: #1ad;
-  color: white;
 }
 
-.navbar li a:visited {
-  color: black;
+.navbar .menu-dropdown summary {
+  position: relative;
 }
 
-.navbar li a:active {
-  color: black;
+.navbar .menu-dropdown summary::after {
+  position: absolute;
+  content: "v";
+  right: 16px;
+}
+
+.navbar .menu-dropdown-body {
+  background-color: #33ccff;
+  position: absolute;
+  box-shadow: 1px 1px 5px 1px black;
+  border-radius: 5px;
+  padding: 8px 0;
+}
+
+.navbar .menu-dropdown-body strong {
+  margin: 0 16px;
+}
+
+.navbar .menu-dropdown-body button {
+  display: block;
+  background-color: #30c0f090;
+  width: 100%;
+  border: none;
 }
 
 .logo {
