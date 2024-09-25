@@ -18,8 +18,10 @@ function ValueSet(opt, value) {
   switch (opt) {
     case "textsize":
       document.documentElement.style.fontSize = value;
+      break;
     case "width":
       document.documentElement.dataset.width = value;
+      break;
   }
 }
 
