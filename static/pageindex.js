@@ -20,7 +20,7 @@ const AllPages = PageIndex.querySelectorAll("li");
 
 const QueryParams = new URLSearchParams(location.search);
 
-const SearchForm = document.querySelector("form");
+const SearchForm = document.querySelector("#search-form");
 
 const RandomButton = document.querySelector(".randompage");
 

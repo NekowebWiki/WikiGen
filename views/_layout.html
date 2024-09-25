@@ -15,6 +15,7 @@ of the website source code:
 <html lang="{{LANG}}">
   <head>
     {% block head %}
+    <script src="/layoutget.js"></script>
     <title>{{ PAGE_TITLE }}</title>
     <meta
         name="viewport"
@@ -83,6 +84,56 @@ of the website source code:
             src="https://webring.nekoweb.org/onionring-widget.js"
           ></script>
         </div>
+        <form id="layout-form" action="#">
+          <details class="menu-dropdown">
+            <summary>Layout</summary>
+            <div class="menu-dropdown-body">
+                <strong>Width</strong>
+                <ul>
+                    <button
+                      name="width"
+                      value="__unset__"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Balanced</button>
+                    <button
+                      name="width"
+                      value="thin"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Minimum</button>
+                    <button
+                      name="width"
+                      value="wide"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Wide</button>
+                </ul>
+                <strong>Text Size</strong>
+                <ul>
+                    <button
+                      name="textsize"
+                      value="small"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Small</button>
+                    <button
+                      name="textsize"
+                      value="__unset__"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Standard</button>
+                    <button
+                      name="textsize"
+                      value="large"
+                      class="menu-dropdown-select"
+                      type="submit"
+                    >Large</button>
+                </ul>
+            </div>
+          </details>
+          <script src="/layoutset.js"></script>
+        </form>
         <center style="margin-top:5px">
             <a href="/copying.html">
                 <img src="/CC_BY-SA.svg" width="100" />

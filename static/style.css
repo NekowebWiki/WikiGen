@@ -53,7 +53,7 @@ p {
 
 hgroup p {
   font-weight: 700;
-  font-size: .9rem;
+  font-size: 90%;
 }
 
 a:link {
@@ -88,6 +88,14 @@ a:active {
   max-width: max(1000px, 70%);
   display: flex;
   gap: 60px;
+}
+
+html[data-width=wide] .container {
+  max-width: 100%;
+}
+
+html[data-width=thin] .container {
+  max-width: 1000px;
 }
 
 .main {
@@ -136,6 +144,7 @@ header .tools li {
   background-color: #e6ffff;
   border-radius: 25px;
   padding: 10px;
+  font-size: 16px;
   width: 160px;
   flex: 0;
   height: fit-content;
