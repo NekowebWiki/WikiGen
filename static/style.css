@@ -85,7 +85,7 @@ a:active {
   background-color: #29bef0;
   border-radius: 25px;
   padding: 20px;
-  max-width: 1000px;
+  max-width: max(1000px, 70%);
   display: flex;
   gap: 60px;
 }
