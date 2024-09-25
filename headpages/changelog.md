@@ -7,6 +7,13 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Sep 25
+
+* There's a new editor. It allows the easy editing of pages, and the exporting of diffs to make the merging of these a little easier.
+* Added a Oneko to the frontpage, because it's fun.
+* There are new layout options. You can set the width of this section and the text-size.
+* A bugfix to the RSS feed... again.
+
 ## 2024 Sep 20
 
 * Revert accidental reverted sitebox change.
