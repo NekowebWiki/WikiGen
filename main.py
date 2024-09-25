@@ -52,6 +52,7 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
                               )
                           )
         RenderedOut = content.replace(".md", ".html")
+        webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
         
         WikiRender, options = MDWiki(
                 RenderedMD,
@@ -70,9 +71,10 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
             PAGE_SUBTITLE=PageSubtitle,
             TableOfContents=TableOfContents if not options["manualtoc"] else None,
             Content=WikiRender,
-            Source=JoinPath(input_dir, content).replace("\\", "/")
+            Source=JoinPath(input_dir, content).replace("\\", "/"),
+            webout=webout
         )
-        webout = output.replace("\\", "/").replace("build/", "/", 1) + "/" + RenderedOut
+        
 
         Indexed.append((webout,PageTitle,input_dir,Description))
 
