@@ -172,6 +172,10 @@ header .tools li {
   background-color: #1ad;
 }
 
+.navbar .menu-dropdown {
+  margin-top: 5px;
+}
+
 .navbar .menu-dropdown summary {
   position: relative;
 }
