@@ -246,11 +246,35 @@ async function SetupPython() {
     return PyodideCached;
 }
 
+const defaultcontent = `---
+title: New page!
+---
+
+<!--
+Hey there! Looks like you're making a new page.
+
+Make sure to see the Markdown reference:
+https://wiki.nekoweb.org/md-ref.html
+
+And to submit a page, click "export diff" and Discord.
+-->`;
+
 async function CodeEditor() {
     const LikelyPath = GetLikelyPagePath(Path);
     const GetContent = RawURL + LikelyPath;
 
-    const content = await fetch(GetContent).then(res => res.text());
+    const contentfetch = await fetch(GetContent);
+
+    var content;
+
+    switch (contentfetch.status) {
+        case 200:
+            content = await contentfetch.text();
+            break;
+        default:
+            content = defaultcontent;
+            break;
+    }
 
     editorenv.oldcontent = content;
     editorenv.filename = LikelyPath;
@@ -289,7 +313,11 @@ function exportpatch() {
     document.body.removeChild(tempanchor);
 }
 
-function GetLikelyPagePath(page) {
+function GetLikelyPagePath(p) {
+    var page = p;
+    if (page.startswith("/"))
+        page = page.slice(1)
+
     if (page == "")
         return "/headpages/index.md"
 
@@ -302,13 +330,11 @@ function GetLikelyPagePath(page) {
     return "/headpages/" + likelyfilename;
 }
 
-/*
 window.addEventListener("beforeunload", function (e) {
     var confirmationMessage = "Uh-oh! You may have unsaved changes. Make sure to export your changes before leaving!";
 
     (e || window.event).returnValue = confirmationMessage;
     return confirmationMessage;
 });
-*/
 </script>
 {% endblock %}
