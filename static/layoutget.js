@@ -9,7 +9,8 @@ SetOpts({
 });
 
 function SetOpts(opts) {
-  for ([opt, val] in opts) {
+  for (let opt in opts) {
+    let val = opts[opt];
     SetOption(opt, val);
   }
 }
