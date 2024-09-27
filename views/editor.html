@@ -217,7 +217,8 @@ const RawURL = "https://raw.githubusercontent.com/NekowebWiki/WikiGen/refs/heads
 
 var editorenv = {
     "oldcontent": "",
-    "filename": ""
+    "filename": "",
+    "newpage": false
 }
 var editorcodemirror;
 var PyodideCached;
@@ -273,10 +274,12 @@ async function CodeEditor() {
             break;
         default:
             content = defaultcontent;
+            editorenv.newpage = true;
             break;
     }
 
-    editorenv.oldcontent = content;
+    if (!editorenv.newpage)
+        editorenv.oldcontent = content;
     editorenv.filename = LikelyPath;
 
     editorcodemirror = CodeMirror(document.querySelector("#editspace"), {
@@ -302,7 +305,10 @@ async function RenderMD() {
 
 function exportpatch() {
     const newcontent = editorcodemirror.getValue();
-    const diff = Diff.createPatch(editorenv.filename, editorenv.oldcontent, newcontent);
+    var diff = Diff.createPatch(editorenv.filename, editorenv.oldcontent, newcontent);
+
+    if (editorenv.newpage)
+        diff = diff.replace(/(?<=={67}\n--- ).*(?=\n)/, "/dev/null");
     
     const tempanchor = document.createElement("a")
     tempanchor.href = "data:text/plain;charset=utf-8," + encodeURIComponent(diff);
