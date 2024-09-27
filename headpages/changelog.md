@@ -7,6 +7,13 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Sep 27
+
+* Editor can now correctly create new pages.
+* General other editor bugfixes.
+* Fixed bug with layout options not saving: it was actually a problem with the way they were loaded.
+* Added space before layout options.
+
 ## 2024 Sep 25
 
 * There's a new editor. It allows the easy editing of pages, and the exporting of diffs to make the merging of these a little easier.
