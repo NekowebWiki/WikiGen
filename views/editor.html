@@ -315,7 +315,7 @@ function exportpatch() {
 
 function GetLikelyPagePath(p) {
     var page = p;
-    if (page.startswith("/"))
+    if (page.startsWith("/"))
         page = page.slice(1)
 
     if (page == "")
