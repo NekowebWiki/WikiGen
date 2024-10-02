@@ -4,16 +4,22 @@ subtitle: A guide on how to contribute to this wiki.
 desc: How to contribute to the Nekoweb Wiki
 notoc: true
 ---
-The Nekoweb Wiki encourages everyone to contribute! Here is a guide on how to contribute.
+The Nekoweb Wiki encourages everyone to contribute! Here's how you can contribute to the wiki.
 
-1. If you don't already have a [GitHub account](https://github.com/), create one.
-2. Go to [the wiki repository](https://github.com/NekowebWiki/WikiGen) on GitHub.
-3. Click "Fork."
-4. Make the change(s) you are intending to make. For editing pages, see [the Markdown reference](/md-ref.html).
-5. [Create a new PR](https://github.com/NekowebWiki/WikiGen/compare) and click "compare across forks."
-6. Click into the selection labeled "head repository" and then select the branch that you pushed your changes to in the selection next to it.
-7. Click "Create Pull Request." Now see [Taking feedback](#taking-feedback).
+# Submitting pages
 
-## Taking feedback
+## Creating a page
 
-After making your pull request, you may get comments and change requests from community members. It is suggested that you read this feedback, and try to improve where possible. You won't need to make a new PR, as GitHub automatically updates the request every time a new change is made to the branch where you pushed your changes to.
+Creating a new page is about as simple as going to the the [editor](/editor.html), typing in the name of the page you'd like to create, then clicking "Create." You should read [the section on using the editor](#using-the-editor).
+
+## Editing other pages
+
+Simply navigate to the page you'd like to edit, then click "edit" in the top right. This opens the editor and automatically loads the page's content. You should read [the section on using the editor](#using-the-editor).
+
+## Using the editor
+
+*Make sure to read the wiki's [markdown reference](/md-ref.html) before editing anything.*
+
+The render button creates a preview for the page. Be warned, as it is fairly slow.
+
+Once you're finished making your changes, click "Export .diff," then upload your .diff file to the [wiki Discord server](https://discord.gg/f4b4e2Nudk). Alternatively, you could merge the diff into your own fork of the [wiki repository](https://github.com/nekowebwiki/wikigen) then submit it as a pull request.
