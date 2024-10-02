@@ -1,5 +1,5 @@
 ---
-title: Markdown Reference
+title: Markdown reference
 subtitle: Reference for Markdown on this wiki.
 ---
 

@@ -11,5 +11,5 @@ This wiki is still very work in progress, this page is a good example ;-)
 Below are some useful links:
 
 * [Contribution guide](/contributing.html)
-* [Markdown Reference](/md-ref.html)
+* [Markdown reference](/md-ref.html)
 * [Wiki licensing](/copying.html)
