@@ -198,6 +198,20 @@ function UsableOutput(output) {
 
 {% block main %}
 <div
+    id="newpage-wizard"
+    style="display:none"
+>
+    <p>
+        <select>
+            <option value="w/" selected="selected">/w/</option>
+            <option value="">/</option>
+        </select>
+        <input type="text" placeholder="Page name" />
+    </p>
+    <button type="submit">Create</button>
+    <p id="newpage-warning"></p>
+</div>
+<div
     id="viewspace"
     style="display:none"
 ></div>
@@ -223,12 +237,11 @@ var editorenv = {
 var editorcodemirror;
 var PyodideCached;
 
-const Path = Params.get("path");
-if (Path !== null) {
-    CodeEditor()
-} else {
-    location = "/";
-}
+var Path = Params.get("path");
+if (Path !== null)
+    CodeEditor();
+else
+    CreatePage();
 
 async function SetupPython() {
     if (!PyodideCached) {
@@ -248,7 +261,7 @@ async function SetupPython() {
 }
 
 const defaultcontent = `---
-title: New page!
+title: {pagetitle}
 ---
 
 <!--
@@ -260,11 +273,46 @@ https://wiki.nekoweb.org/md-ref.html
 And to submit a page, click "export diff" and Discord.
 -->`;
 
-async function CodeEditor() {
+function CreatePageWarn(warning) {
+    document.querySelector("#newpage-warning").innerText = warning;
+}
+
+function TitleSlugify(title) {
+    return title
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9-]/g, "")
+        .replace(/\s/g, "-")
+        .replace(/-{2,}/g, "-");
+}
+
+function CreatePage() {
+    const NewPageWiz = document.querySelector("#newpage-wizard");
+    NewPageWiz.style.display = "initial";
+    NewPageWiz.querySelector("button").addEventListener("click", async _ => {
+        console.log("!")
+        const Pagename = NewPageWiz.querySelector("input").value;
+        if (Pagename == "") {
+            CreatePageWarn("Page couldn't be created: Empty page title.");
+            return;
+        }
+        Path = NewPageWiz.querySelector("select").value + TitleSlugify(Pagename) + ".html";
+        const failure = await CodeEditor(true, Pagename);
+        if (failure == "failure")
+            return;
+        NewPageWiz.style.display = "none";
+    });
+}
+
+async function CodeEditor(forcenew = false, pagetitle="") {
     const LikelyPath = GetLikelyPagePath(Path);
     const GetContent = RawURL + LikelyPath;
 
-    const contentfetch = await fetch(GetContent);
+    var contentfetch = await fetch(GetContent);
+    if (forcenew && contentfetch.status != 404) {
+        CreatePageWarn("New page couldn't be created: page already exists.");
+        return "failure";
+    }
 
     var content;
 
@@ -273,7 +321,7 @@ async function CodeEditor() {
             content = await contentfetch.text();
             break;
         default:
-            content = defaultcontent;
+            content = defaultcontent.replace("{pagetitle}", pagetitle);
             editorenv.newpage = true;
             break;
     }

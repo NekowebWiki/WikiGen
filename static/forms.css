@@ -18,25 +18,26 @@ search form {
     gap: 5px;
 }
 
-input[type=search] {
+input {
   padding-left: 9px;
   border: 2px solid #33ccff;
   border-radius: 25px;
   outline: none;
 }
 
-input[type=search]:focus {
-  border: 2px solid #1ad;
-  border-radius: 25px;
+input:focus {
+  border-color: #1ad;
 }
 
-button:not(.menu-dropdown-select) {
+button:not(.menu-dropdown-select),
+select {
   background-color: #33ccff;
   border: 2px solid #33ccff;
   border-radius: 25px;
 }
 
-button:not(.menu-dropdown-select):hover {
+button:not(.menu-dropdown-select):hover,
+select:hover{
   background-color: #1ad;
   border: 2px solid #1ad;
   color: white;
