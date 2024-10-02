@@ -25,17 +25,16 @@ submit. You will recieve an email. Follow the steps from there.
 ## How to use Nekoweb
 
 After logging in, you will see these links in the sidebar:
-* Home: The home page
+* Home: The home page.
 * Explore: Explore other sites.
-* Follows: See who you follow.
+* Following: See who you follow.
 * Followers: See who follows you.
-* Discord: The official Discord server.
-* FAQ: Frequlinty asked questions.
-* Donate: Donate to Nekoweb (see the article Nekoweb for more
-  infomation about donating).
-* Dashboard: The dashboard where you can manage thier site(s). 
-* Account: Manage your account
-* Settings: The settings for your account/website.
+* Terminal: The [NekoVM](https://wiki.nekoweb.org/w/nekovm.html).
+* Dashboard: Manage your site(s).
+* Donate: Donate to Nekoweb (see the article [Nekoweb](https://wiki.nekoweb.org/w/nekoweb.html) for more infomation about donating).
+* FAQ: Frequently asked questions.
+* News: Latest news regarding Nekoweb.
+* Discord: Nekoweb discord server
 
 ### File manager and the code editor
 In order to use the build-in file manager and code editor, go to the
