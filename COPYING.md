@@ -1,7 +1,8 @@
-* `main.py`, `RenderUtils.py`, `config.py`, and `MiscUtils.py` all use the BSD 3-Clause license. A copy of this license 
-  can be found at `/BSD-3-CLAUSE.txt` in the source repository.
-* Wiki content (under `content` and `images`) is licensed under CC BY-SA. A copy is included at `/CC_BY-SA.txt` on the
-  site, and at `/static/CC_BY-SA.txt` in the source repository.
-* Views are licensed under the BSD 3-Clause license. A copy of this license can be found at `/BSD-3-CLAUSE.txt`.
-* Anything under `static` should be assumed to be unlicensed unless specified otherwise.
-* Everything under `/branding` is under CC BY-SA 4.0. A copy of this license can be found at `/CC_BY-SA.txt`.
+This wiki uses multiple licenses: one for the code behind the wiki, the static site generator, styling, scripts, and
+design of the website, and one for the actual site content itself.
+
+* `main.py`, `RenderUtils.py`, `config.py`, `MiscUtils.py`, and everything under `views/` use the BSD 3-Clause license,
+  a copy of which is available at the file `BSD-3-CLAUSE.txt`.
+* Wiki content (under `content/` and `images/`) as well as wiki branding (under `branding/`) are available under the
+  CC BY-SA 4.0, a copy of which can be found at `/CC_BY-SA.txt`.
+* Anything under `static` should be assumed to be unlicensed unless specified otherwise within the file itself.
