@@ -224,6 +224,17 @@ width="170" height="28"></iframe>
   
   > Nekoweb is back up! This means we can safely move to new server with current data.
 
+- **27/09/2024**: Dimden announces:
+  >I've been coding my own, [much faster http server](https://github.com/dimdenGD/ultimate-express) and      >yesterday migrated Nekoweb to use it. But it's
+  >still very new so there are a bunch of bugs that are   getting fixed as people report them. Bugs can
+  >include:
+  >* files showing 404 even if they exist
+  >* files not updating even after CTRL+SHIFT+R
+  >* 403 errors
+  >* and other random issues
+  >
+  >Please report bugs you get in ⁠suggestions-bugs-etc and they'll be fixed. Basically, any behavior that     suddenly became different since yesterday is probably a bug.
+
 ## Resources used
 * https://nekoweb.org/
 * [Nekoweb Discord](https://discord.gg/hvfHKyVS6b)
