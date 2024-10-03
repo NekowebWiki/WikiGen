@@ -7,6 +7,15 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Oct 03
+
+* Updates to pages
+  * Contributing - Full rewrite
+  * Nekoweb - Added new quotation from dimden about a Nekoweb update (update on Sep. 27th)
+  * Guide to Nekoweb - Nekoweb updated its navbar, so the page needed to be as well
+  * Markdown reference - Page re-capitalization: was using title-case.
+* Added better support for page creation via the editor.
+
 ## 2024 Sep 27
 
 * Editor can now correctly create new pages.
