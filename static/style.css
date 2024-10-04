@@ -99,13 +99,33 @@ html[data-width=thin] .container {
 }
 
 .main {
-  background-color: #e6ffff;
+  flex: 1;
   border-radius: 25px;
+  overflow: scroll;
   padding: 10px;
   width: 100%;
   height: calc(100vh - 76px);
-  overflow: scroll;
-  flex: 1;
+  background:
+    linear-gradient(
+      #e6ffff 30%,
+      #e6ffffaa
+    ) center top,
+    linear-gradient(
+      #e6ffffaa, 
+      #e6ffff 70%
+    ) center bottom,
+    linear-gradient(
+      #065555aa,
+      #0000
+    ) center top,
+    linear-gradient(
+      #0000,
+      #065555aa
+    ) center bottom,
+    #e6ffff;
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  background-attachment: local, local, scroll, scroll;
 }
 
 /* Layout > heading */
