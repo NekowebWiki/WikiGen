@@ -337,6 +337,7 @@ async function CodeEditor(forcenew = false, pagetitle="") {
         tabSize: 2,
         value: content,
         mode: "gfm",
+        lineWrapping: true
     });
 }
 
@@ -345,7 +346,7 @@ async function RenderMD() {
     const Output = UsableOutput(
         JSON.parse(
             await pyodide.runPython(
-                PyRender + `FinalRender("""${editorcodemirror.getValue().replace("\"", "\\\"")}""")`
+                PyRender + `FinalRender("""${editorcodemirror.getValue().replace("\"", "\\\"")}\n""")`
             )
         )
     );
