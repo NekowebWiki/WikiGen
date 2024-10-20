@@ -235,6 +235,16 @@ width="170" height="28"></iframe>
   >
   >Please report bugs you get in ⁠suggestions-bugs-etc and they'll be fixed. Basically, any behavior that     suddenly became different since yesterday is probably a bug.
 
+- **20/10/2024**: Dimden announces:
+  >Now there's an option to enable strict slashes (sorry for unnecessary ping). https://lune.dimden.dev/3d593959838b.png
+
+- **20/10/2024**: Dimden announces:
+  >More updates today:
+  >* Nekoweb now has multiple FTP servers. You can choose between Europe and USA server. Check FTP page for more info.
+  >* Finally fixed bug with moving folders and files!
+  >* You can now drop folders to Nekoweb dashboard!
+  >* Fixed bug with it being impossible to create files starting with dot.
+
 ## Resources used
 * https://nekoweb.org/
 * [Nekoweb Discord](https://discord.gg/hvfHKyVS6b)
