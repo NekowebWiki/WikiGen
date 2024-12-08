@@ -245,6 +245,11 @@ width="170" height="28"></iframe>
   >* You can now drop folders to Nekoweb dashboard!
   >* Fixed bug with it being impossible to create files starting with dot.
 
+- **23-11-2024**: Dimden announces that Nekoweb hit 8K users.
+
+- **30-11-2024**: Dimden announces:
+  >Thanks to hana ([ourheroisasandwich.nekoweb.org](https://ourheroisasandwich.nekoweb.org)) Nekoweb is now (mostly) mobile friendly!
+
 ## Resources used
 * https://nekoweb.org/
 * [Nekoweb Discord](https://discord.gg/hvfHKyVS6b)
