@@ -7,6 +7,11 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Dec 14
+
+* Update to the [Nekoweb](/w/nekoweb.html) page.
+* RSS feed now updated to work better with Nekoweb's new feed page.
+
 ## 2024 Oct 21
 
 * Add newer announcements to the Nekoweb page.
