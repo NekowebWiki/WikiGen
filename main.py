@@ -167,8 +167,8 @@ def main():
     JinjaRender(
         GetTemplate("editor.html"),
         JoinPath("build", "editor.html"),
-        PAGE_TITLE = "Nekoweb Wiki - Edit!",
-        PAGE_DESC = "(experimental) Edit wikipages!",
+        PAGE_TITLE = "Nekoweb Wiki - Edit",
+        PAGE_DESC = "Edit wikipages",
         PAGE_TYPE = "website",
         LANG="en",
     )
