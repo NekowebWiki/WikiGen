@@ -111,9 +111,9 @@ def WriteFeed(CommitBase, ReleaseMessage = "#action/build-deploy"):
         
         RSSFeed += \
             "<item>" +\
-                f"<title>Site update!</title>" +\
+                f"<title>Update to the Nekoweb Wiki</title>" +\
                 f"<link>{commitlink}</link>" +\
-                f"<description>See link for details.</description>" +\
+                f"<description>The Nekoweb Wiki has now been updated.</description>" +\
                 f"<pubDate>{date}</pubDate>" +\
                 f"<guid>{ChangelogId}</guid>" +\
             "</item>"

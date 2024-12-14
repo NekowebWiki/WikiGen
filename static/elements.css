@@ -26,3 +26,27 @@
 .follow:hover {background:#1ad}
 .follow .on-nekoweb {font-size:11px;}
 .follow.following .on-nekoweb {display:none}
+/* Postbox */
+.post-box {
+    background: #e6ffff url("https://wiki.nekoweb.org/background-animated.svg") no-repeat left;
+    border: none;
+}
+.post-box::after {
+    background: url("https://wiki.nekoweb.org/longcat.png") no-repeat right;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    image-rendering: pixelated;
+    background-size: contain;
+}
+.post-box .post-top-dot, .post-box .post-author, .post-box .post-dot {display: none;}
+.post-box .post-title {
+    display: inline-block;
+    margin: 0;
+    font-style: normal;
+}
+
