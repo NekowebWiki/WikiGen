@@ -28,7 +28,8 @@
 .follow.following .on-nekoweb {display:none}
 /* Postbox */
 .post-box {
-    background: #e6ffff url("https://wiki.nekoweb.org/background-animated.svg") no-repeat left;
+    background: linear-gradient(0.25turn, #e6ffff 45%, #0000 50%), url(//nekoweb.org/site/wiki/files/background-animated.svg?original=1), #e6ffff;
+    background-size: contain;
     border: none;
 }
 .post-box::after {
