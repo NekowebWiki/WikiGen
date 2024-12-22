@@ -7,6 +7,10 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2024 Dec 22
+
+* Changes to all elements on Nekoweb.
+
 ## 2024 Dec 15
 
 * Small change to the feed CSS.
