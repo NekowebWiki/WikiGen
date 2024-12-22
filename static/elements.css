@@ -29,6 +29,7 @@
 /* Postbox */
 .post-box {
     background: linear-gradient(0.25turn, #e6ffff 46%, #0000 51%), url(//nekoweb.org/site/wiki/files/background-animated.svg?original=1), #e6ffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: contain;
     border: none;
 }
