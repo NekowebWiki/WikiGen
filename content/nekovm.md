@@ -2,14 +2,15 @@
 title: NekoVM
 subtitle: This article covers the NekoVM.
 ---
-## What is NekoVM?
-NekoVM is a Linux emulator that runs in the browser, with Node.js, NPM and full read/write access.
+NekoVM is a Linux emulator that runs in the browser used to build sites with static site generators or frameworks, and has (as stated by Dimden) support for any static site generator or framework.
 
-NekoVM is used to build sites with static site generators or frameworks, and has (as stated by Dimden) support for any static site generator or framework.
+It features Node.js, NPM, Python 3, and the ability to run additional programs via WebAssembly (WASM), all with full read/write access.
 
-Currently, you can launch NekoVM 1 time per 1 minute. But if you are a donator, you can launch NekoVM 2 times per 1 minute.
+NekoVM can currently only be launched one time per minute (or 2 times per minute for donators), as it counts as a site export, which is rate limited.
 
-## History of NekoVM
+<place-toc />
+
+## History
 - **08/04/24**: dimden announces that NekoVM is added:
 
   > most importantly, an actual gamechanger: introducing NekoVM, a Linux with Node.js and NPM running inside your browser, with full read/write access to your site filesystem.
