@@ -1,7 +1,7 @@
 .site-box,.follow,.post-box{font-family:Verdana,Geneva,Tahoma,sans-serif !important;}
 /*sitebox*/
 .site-box {
-background:#6ac8e8 url(https://wiki.nekoweb.org/background-animated.svg) repeat;background-size:200px;
+background:#6ac8e8 url(//wiki.nekoweb.org/background-animated.svg) repeat;background-size:200px;
 text-align:center;color:#000;font-size:12px;border-radius:15px
 }
 .site-box>a>p{color: #000;font-weight: 700}
@@ -23,8 +23,10 @@ background-size:contain;border:none;
 }
 .post-box::after{
 background:url(//wiki.nekoweb.org/longcat.png) no-repeat right; height:100%;width:100%;display:block;content:"";
-position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain;
+position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain
 }
-.post-box .post-top-dot,.post-box .post-author, .post-box .post-dot{display: none;}
-.post-box .post-title{display:inline-block;margin:0;font-style: normal;}
+.post-box .post-top-dot,
+.post-box .post-author,
+.post-box .post-dot{display:none}
+.post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}
 

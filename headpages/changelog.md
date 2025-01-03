@@ -7,6 +7,13 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2025 Jan 3
+
+First of all, happy New Years everyone!
+
+* Change to the start of the NekoVM page.
+* Fix to elements.css.
+
 ## 2024 Dec 22
 
 * Changes to all elements on Nekoweb.
