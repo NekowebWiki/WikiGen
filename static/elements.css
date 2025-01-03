@@ -25,8 +25,8 @@ background-size:contain;border:none;
 background:url(//wiki.nekoweb.org/longcat.png) no-repeat right; height:100%;width:100%;display:block;content:"";
 position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain
 }
-.post-box .post-top-dot,
-.post-box .post-author,
+.post-box .post-top-dot{display:none}
+.post-box .post-author{display:none}
 .post-box .post-dot{display:none}
 .post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}
 
