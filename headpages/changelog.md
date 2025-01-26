@@ -10,6 +10,7 @@ Note that all dates written here are in UTC, and are formatted as year month day
 ## 2025 Jan 26
 
 * Fixes typo on the main page.
+* Update logo and buttons.
 
 ## 2025 Jan 16
 
