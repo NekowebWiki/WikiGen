@@ -7,6 +7,10 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2025 Jan 26
+
+* Fixes typo on the main page.
+
 ## 2025 Jan 16
 
 * Small changes to elements file.
