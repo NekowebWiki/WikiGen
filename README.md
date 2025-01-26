@@ -1,6 +1,6 @@
 # WikiGen
 
-I bare bones static site generator made specifically for the Nekoweb wiki.
+A bare bones static site generator made specifically for the Nekoweb wiki.
 
 All content should be fully ported over now. However, more stuff may need to be
 done.
