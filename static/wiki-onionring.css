@@ -47,3 +47,13 @@ See the CNPL for details.
 #nekowebring .webring-links {
   font-size: small;
 }
+@media (prefers-color-scheme: dark) {
+    #nekowebring table {
+      background: #1f384a;
+      margin: 0 auto; /* centers the widget */
+      padding: 7px;
+      width: 100%;
+      border-radius: 99px;
+      image-rendering: pixelated;
+    }
+}
