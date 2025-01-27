@@ -9,6 +9,8 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 ## 2025 Jan 26
 
+* Added new article: [\#nekoweb (IRC)](/w/nekoweb_irc.html).
+* Added darkmode that is enabled depending on your options; courtesy of Pomarańczówek.
 * Fixes typo on the main page.
 * Update logo and buttons.
 
