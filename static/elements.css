@@ -1,35 +1,18 @@
-.site-box,.follow,.post-box{font-family:Verdana,Geneva,Tahoma,sans-serif !important;}
+.site-box,.follow,.post-box{font-family:Verdana,Geneva,Tahoma,sans-serif !important}
 /*sitebox*/
-.site-box {
-background:#6ac8e8 url(//wiki.nekoweb.org/background-animated.svg) repeat;background-size:200px;
-text-align:center;color:#000;font-size:12px;border-radius:15px
-}
-.site-box>a>p{color: #000;font-weight: 700}
+.site-box {background:#6ac8e8 url(//wiki.nekoweb.org/background-animated.svg) repeat;background-size:200px;text-align:center;color:#000;font-size:12px;border-radius:15px}
+.site-box>a>p{color:#000;font-weight:700}
 .site-box>a>span{color:#000}
 .site-box .sitefeature{background:center no-repeat url(//wiki.nekoweb.org/logo.png);border:none}
 .site-box .sitefeature img{opacity:0}
 /*Follow button*/
-.follow{
-display:block;color:#000;border-radius:25px;padding:8px 16px;background-color:#3cf;text-decoration:none !important;
-margin-bottom:5px;border:none;width:100%;text-align:left;font-size:16px
-}
+.follow{display:block;color:#000;border-radius:25px;padding:8px 16px;background-color:#3cf;text-decoration:none !important;margin-bottom:5px;border:none;width:100%;text-align:left;font-size:16px}
 .follow:hover{background:#1ad}
-.follow .on-nekoweb{font-size:11px;}
+.follow .on-nekoweb{font-size:11px}
 .follow.following .on-nekoweb{display:none}
-@media (prefers-color-scheme: dark) { /* FYI, this might not function */
-.follow{color:#fff;background-color:#1f384a;}
-.follow:hover{background:#28465c;
+@media(prefers-color-scheme:dark){
+.follow{color:#fff;background-color:#1f384a}
+.follow:hover{background:#28465c}
 }
 /* Postbox */
-.post-box{
-background:linear-gradient(0.25turn,#e6ffff 46%,#0000 51%),url(//wiki.nekoweb.org/background-animated.svg),#e6ffff;
-background-size:contain;border:none;
-}
-.post-box::after{
-background:url(//wiki.nekoweb.org/longcat.png) no-repeat right; height:100%;width:100%;display:block;content:"";
-position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain
-}
-.post-box .post-top-dot{display:none}
-.post-box .post-author{display:none}
-.post-box .post-dot{display:none}
-.post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}
+.post-box{background:linear-gradient(0.25turn,#e6ffff 46%,#0000 51%),url(//wiki.nekoweb.org/background-animated.svg),#e6ffff;background-size:contain;border:none;}.post-box::after{background:url(//wiki.nekoweb.org/longcat.png) no-repeat right; height:100%;width:100%;display:block;content:"";position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain}.post-box .post-top-dot{display:none}.post-box .post-author{display:none}.post-box .post-dot{display:none}.post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}
