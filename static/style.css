@@ -238,43 +238,18 @@ header .tools li {
 }
 @media (prefers-color-scheme: dark) {
     .container {
-      	margin: auto;
       	background-color: #244257;
-      	border-radius: 25px;
-      	padding: 20px;
-      	max-width: max(1000px, 70%);
-      	display: flex;
-      	gap: 60px;
     }
     .navbar {
       	background-color: #152936;
-     	border-radius: 25px;
-     	padding: 10px;
-      	font-size: 16px;
-      	width: 160px;
-      	flex: 0;
-      	height: fit-content;
       	color: #ffff;
     }
     .navbar :is(li a:is(:link,:visited,:active), .menu-dropdown summary) {
-  		display: block;
-  		border-radius: 25px;
   		color: white;
-  		padding: 8px 16px;
  		background-color: #1f384a;
- 		text-decoration: none !important;
- 		margin-bottom: 5px;
 	}
 	.logo {
   		background-color: #1f384a;
-  		border-radius: 25px;
-  		width: 160px;
-  		height: 150px;
-  		margin-bottom: 15px;
-  		display: flex;
-  		justify-content: center;
-  		align-items: center;
-  		overflow: hidden;
 	}
 	.navbar :is(li a, .menu-dropdown summary, .navbar .menu-dropdown-body button):hover {
   		background-color: #28465c;
@@ -289,41 +264,43 @@ header .tools li {
 		color: white;
 	}
 	.main {
-		flex: 1;
-		border-radius: 25px;
-		overflow: scroll;
-		padding: 10px;
-	  	width: 100%;
-	  	height: calc(100vh - 76px);
 	  	background:
-	    #152936;
-	  	background-repeat: no-repeat;
-	  	background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-	  	background-attachment: local, local, scroll, scroll;
-	  	color: white;
+            linear-gradient(
+                #152936 30%,
+                #152936aa
+            ) center top,
+            linear-gradient(
+                #152936aa, 
+                #152936 70%
+            ) center bottom,
+            linear-gradient(
+                #56a5a5aa,
+                #0000
+            ) center top,
+            linear-gradient(
+                #0000,
+                #56a5a5aa
+            ) center bottom,
+            #152936;
+        background-repeat: no-repeat;
+        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+        background-attachment: local, local, scroll, scroll;
+        color: white;
 	}
 	.main a:link {
 		color: white;
 	}
 	.navbar .menu-dropdown-body {
 		background-color: #1f384a;
-		position: absolute;
-		box-shadow: 1px 1px 5px 1px black;
-		border-radius: 5px;
-		padding: 8px 0;
 		color: white;
 	}
 	.navbar .menu-dropdown-body button {
-		display: block;
 		background-color: #1f384a;
-		width: 100%;
-		border: none;
 		color: white;
 	}
 	a:visited,
 	a:active {
   		color: white;
-  		text-decoration: none;
 	}
 	body {
 		background-image: url(/background-dark.png);

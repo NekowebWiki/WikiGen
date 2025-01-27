@@ -16,6 +16,10 @@ margin-bottom:5px;border:none;width:100%;text-align:left;font-size:16px
 .follow:hover{background:#1ad}
 .follow .on-nekoweb{font-size:11px;}
 .follow.following .on-nekoweb{display:none}
+@media (prefers-color-scheme: dark) { /* FYI, this might not function */
+.follow{color:#fff;background-color:#1f384a;}
+.follow:hover{background:#28465c;
+}
 /* Postbox */
 .post-box{
 background:linear-gradient(0.25turn,#e6ffff 46%,#0000 51%),url(//wiki.nekoweb.org/background-animated.svg),#e6ffff;
@@ -29,9 +33,3 @@ position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contai
 .post-box .post-author{display:none}
 .post-box .post-dot{display:none}
 .post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}
-@media (prefers-color-scheme: dark) {
-  .follow{
-display:block;color:white;border-radius:25px;padding:8px 16px;background-color:#1f384a;text-decoration:none !important;
-margin-bottom:5px;border:none;width:100%;text-align:left;font-size:16px
-}
-  .follow:hover{background:#28465c;}
