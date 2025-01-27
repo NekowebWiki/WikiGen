@@ -7,6 +7,8 @@ desc: "#nekoweb is an IRC channel, dedicated to Nekoweb."
 
 The channel is located on the IRC server [Libera.chat](https://libera.chat/).
 
+<place-toc/>
+
 ## History
 On 20/04/24, [nothsa](https://blackspace.lol) created \#nekoweb, and shared it on the Nekoweb Discord server.
 
