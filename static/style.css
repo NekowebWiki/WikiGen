@@ -305,4 +305,7 @@ header .tools li {
 	body {
 		background-image: url(/background-dark.png);
 	}
+    .navbar center img {
+        filter: invert(1);
+    }
 }
