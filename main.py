@@ -24,6 +24,13 @@ repo = Repo()
 
 Indexed = []
 
+def stripquotes(text: str|None):
+    if text is None:
+        return None
+    not_quoted = not text.startswith("\"") and not text.endswith("\"") and \
+                 not text.startswith("'") and not text.endswith("'")
+    return text if not_quoted else text[1:-1]
+
 def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articledir": True }):
     global Indexed
     contents = listdir(input_dir)
@@ -35,15 +42,15 @@ def wikiparse(input_dir: str, output: str, rawinfo: dict = { "out": "w", "articl
         RenderedMD = RenderMarkdown(JoinPath(input_dir, content))
         metadata = RenderedMD.metadata
 
-        PageTitle = metadata["title"]
+        PageTitle = stripquotes(metadata["title"])
         Title = (
                     metadata["forcetitle"]
                     if "forcetitle" in metadata
                     else f"Nekoweb Wiki - {PageTitle}"
                 )
 
-        PageSubtitle = metadata["subtitle"] if "subtitle" in metadata else None
-        Description = metadata["desc"] if "desc" in metadata else PageSubtitle
+        PageSubtitle = stripquotes(metadata["subtitle"] if "subtitle" in metadata else None)
+        Description = stripquotes(metadata["desc"] if "desc" in metadata else PageSubtitle)
 
         TableOfContents = TOC(
                               RenderedMD.toc_html,
