@@ -3,8 +3,6 @@ title: "#nekoweb IRC"
 subtitle: "This article covers the #nekoweb IRC."
 desc: "#nekoweb is an IRC channel, dedicated to Nekoweb."
 ---
-# \#nekoweb (IRC)
-
 \#nekoweb is an IRC channel, dedicated to Nekoweb.
 
 The channel is located on the IRC server [Libera.chat](https://libera.chat/).
