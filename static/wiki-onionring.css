@@ -20,7 +20,7 @@ See the CNPL for details.
 /* === ONIONRING.CSS === */
 
 #nekowebring table {
-  background: #33ccff;
+  background: var(--link);
   margin: 0 auto; /* centers the widget */
   padding: 7px;
   width: 100%;

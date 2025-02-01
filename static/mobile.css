@@ -1,7 +1,7 @@
 #show-nav {
   appearance: none;
-  background-color: #fff;
-  border: #29bef0 solid 5px;
+  background-color: var(--mobi-nav-tog-bg);
+  border: var(--mobi-nav-border) solid 5px;
   border-radius: 20px;
   padding: 10px;
   z-index: 99;
@@ -21,7 +21,7 @@
   position: absolute;
   display: none;
   width: calc(100vw - 76px);
-  outline: 20px #29bef0 solid;
+  outline: 20px var(--mobi-nav-border) solid;
   height: calc(100% - 75px);
   overflow: scroll;
 }

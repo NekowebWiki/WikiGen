@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #000;
+    --primary: #e6ffff;
+    --secondary: #29bef0;
+    --link: #33ccff;
+
+    --link-navbar-hover: #1ad;
+    --layout-switch: #30c0f090;
+    
+    --mobi-nav-border: #29bef0;
+    --mobi-nav-tog-bg: #fff;
+    
+    --bg-img: url(/background.png);
+
+    --scroll-rgb: 230,255,255;
+    --scroll2: #065555aa;
+    --scroll-less: rgba(var(--scroll-rgb), 170);
+    --scroll: rgb(var(--scroll-rgb));
+}
