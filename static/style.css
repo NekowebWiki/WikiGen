@@ -13,9 +13,9 @@ of the source files, see
     https://github.com/NekowebWiki/WikiGen
 */
 body {
-  background-color: white;
-  background-image: url(/background.png);
+  background: white var(--bg-img);
   background-repeat: repeat;
+  color: var(--primary-color);
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   animation: shiftbackground 5s linear infinite;
@@ -48,7 +48,7 @@ h4,
 h5,
 h6,
 p {
-  color: black;
+  color: var(--primary-color);
 }
 
 hgroup p {
@@ -57,23 +57,23 @@ hgroup p {
 }
 
 a:link {
-  color: black;
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
 a:hover {
-  color: #33ccff;
+  color: var(--link);
   text-decoration: none;
 }
 
 a:visited,
 a:active {
-  color: black;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 .main a:link {
-  color: black;
+  color: var(--primary-color);
 }
 
 /*
@@ -82,7 +82,7 @@ a:active {
 
 .container {
   margin: auto;
-  background-color: #29bef0;
+  background-color: var(--secondary);
   border-radius: 25px;
   padding: 20px;
   max-width: max(1000px, 70%);
@@ -107,22 +107,22 @@ html[data-width=thin] .container {
   height: calc(100vh - 76px);
   background:
     linear-gradient(
-      #e6ffff 30%,
-      #e6ffffaa
+      var(--scroll) 30%,
+      var(--scroll-less)
     ) center top,
     linear-gradient(
-      #e6ffffaa, 
-      #e6ffff 70%
+      var(--scroll-less), 
+      var(--scroll) 70%
     ) center bottom,
     linear-gradient(
-      #065555aa,
+      var(--scroll2),
       #0000
     ) center top,
     linear-gradient(
       #0000,
-      #065555aa
+      var(--scroll2)
     ) center bottom,
-    #e6ffff;
+    var(--primary);
   background-repeat: no-repeat;
   background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
   background-attachment: local, local, scroll, scroll;
@@ -161,7 +161,7 @@ header .tools li {
 }
 
 .navbar {
-  background-color: #e6ffff;
+  background-color: var(--primary);
   border-radius: 25px;
   padding: 10px;
   font-size: 16px;
@@ -181,15 +181,15 @@ header .tools li {
 .navbar :is(li a:is(:link,:visited,:active), .menu-dropdown summary) {
   display: block;
   border-radius: 25px;
-  color: black;
+  color: var(--primary-color);
   padding: 8px 16px;
-  background-color: #33ccff;
+  background-color: var(--link);
   text-decoration: none !important;
   margin-bottom: 5px;
 }
 
 .navbar :is(li a, .menu-dropdown summary, .navbar .menu-dropdown-body button):hover {
-  background-color: #1ad;
+  background-color: var(--link-navbar-hover);
 }
 
 .navbar .menu-dropdown {
@@ -198,6 +198,7 @@ header .tools li {
 
 .navbar .menu-dropdown summary {
   position: relative;
+  margin-bottom: 0 !important;
 }
 
 .navbar .menu-dropdown summary::after {
@@ -207,11 +208,14 @@ header .tools li {
 }
 
 .navbar .menu-dropdown-body {
-  background-color: #33ccff;
+  z-index: 99;
+  background-color: var(--link);
   position: absolute;
   box-shadow: 1px 1px 5px 1px black;
   border-radius: 5px;
+  margin-top: 5px;
   padding: 8px 0;
+  column-count: 3;
 }
 
 .navbar .menu-dropdown-body strong {
@@ -220,13 +224,14 @@ header .tools li {
 
 .navbar .menu-dropdown-body button {
   display: block;
-  background-color: #30c0f090;
+  color: inherit;
+  background-color: var(--layout-switch);
   width: 100%;
   border: none;
 }
 
 .logo {
-  background-color: #33ccff;
+  background-color: var(--link);
   border-radius: 25px;
   width: 160px;
   height: 150px;
@@ -236,76 +241,8 @@ header .tools li {
   align-items: center;
   overflow: hidden;
 }
-@media (prefers-color-scheme: dark) {
-    .container {
-      	background-color: #244257;
-    }
-    .navbar {
-      	background-color: #152936;
-      	color: #ffff;
-    }
-    .navbar :is(li a:is(:link,:visited,:active), .menu-dropdown summary) {
-  		color: white;
- 		background-color: #1f384a;
-	}
-	.logo {
-  		background-color: #1f384a;
-	}
-	.navbar :is(li a, .menu-dropdown summary, .navbar .menu-dropdown-body button):hover {
-  		background-color: #28465c;
-	}
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p {
-		color: white;
-	}
-	.main {
-	  	background:
-            linear-gradient(
-                #152936 30%,
-                #152936aa
-            ) center top,
-            linear-gradient(
-                #152936aa, 
-                #152936 70%
-            ) center bottom,
-            linear-gradient(
-                #56a5a5aa,
-                #0000
-            ) center top,
-            linear-gradient(
-                #0000,
-                #56a5a5aa
-            ) center bottom,
-            #152936;
-        background-repeat: no-repeat;
-        background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-        background-attachment: local, local, scroll, scroll;
-        color: white;
-	}
-	.main a:link {
-		color: white;
-	}
-	.navbar .menu-dropdown-body {
-		background-color: #1f384a;
-		color: white;
-	}
-	.navbar .menu-dropdown-body button {
-		background-color: #1f384a;
-		color: white;
-	}
-	a:visited,
-	a:active {
-  		color: white;
-	}
-	body {
-		background-image: url(/background-dark.png);
-	}
-    .navbar center img {
-        filter: invert(1);
-    }
+
+.copying img {
+    filter: var(--copyright-filter);
+    z-index: 1;
 }

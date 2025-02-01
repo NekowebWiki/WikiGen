@@ -14,12 +14,14 @@ of the source files, see
 */
 const defaults = {
   textsize: "16px",
-  width: null
+  width: null,
+  theme: null
 }
 
 SetOpts({
   width: localStorage.getItem("width"),
-  textsize: localStorage.getItem("textsize")
+  textsize: localStorage.getItem("textsize"),
+  theme: localStorage.getItem("theme")
 });
 
 function SetOpts(opts) {
@@ -36,6 +38,13 @@ function ValueSet(opt, value) {
       break;
     case "width":
       document.documentElement.dataset.width = value;
+      break;
+    case "theme":
+      let val = value;
+      if (value == null) {val = window.matchMedia("(prefers-color-scheme:dark)") ? "dark" : "light";}
+      document.querySelector("#default-theme-light").href = "/colors-" + val + ".css";
+      document.querySelector("#default-theme-light").removeAttribute("media");
+      try { document.querySelector("#default-theme-dark").remove(); } catch (_) {}
       break;
   }
 }

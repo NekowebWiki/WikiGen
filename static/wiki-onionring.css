@@ -20,7 +20,7 @@ See the CNPL for details.
 /* === ONIONRING.CSS === */
 
 #nekowebring table {
-  background: #33ccff;
+  background: var(--link);
   margin: 0 auto; /* centers the widget */
   padding: 7px;
   width: 100%;
@@ -47,8 +47,4 @@ See the CNPL for details.
 #nekowebring .webring-links {
   font-size: small;
 }
-@media (prefers-color-scheme: dark) {
-    #nekowebring table {
-      background: #1f384a;
-    }
-}
+

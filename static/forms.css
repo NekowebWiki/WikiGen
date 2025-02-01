@@ -20,7 +20,7 @@ search form {
 
 input {
   padding-left: 9px;
-  border: 2px solid #33ccff;
+  border: 2px solid var(--link);
   border-radius: 25px;
   outline: none;
 }
@@ -31,39 +31,14 @@ input:focus {
 
 button:not(.menu-dropdown-select),
 select {
-  background-color: #33ccff;
-  border: 2px solid #33ccff;
+  background-color: var(--link);
+  border: 2px solid var(--link);
   border-radius: 25px;
 }
 
 button:not(.menu-dropdown-select):hover,
 select:hover{
-  background-color: #1ad;
-  border: 2px solid #1ad;
+  background-color: var(--link-navbar-hover);
+  border: 2px solid var(--link-navbar-hover);
   color: white;
-}
-
-@media (prefers-color-scheme: dark) {
-    button:not(.menu-dropdown-select):hover,
-    select:hover {
-        border-color: #546277;
-        background-color: #546277;
-        color: black;
-    }
-    button:not(.menu-dropdown-select),
-    select {
-        background-color: #244257;
-        border-color: #244257;
-        color: white;
-    }
-    input {
-        border: 2px solid #244257;
-        background-color: black;
-        color: white;
-    }
-
-    input:focus {
-        border-color: #546277;
-    }
-
 }

@@ -15,6 +15,8 @@ of the website source code:
 <html lang="{{LANG}}">
   <head>
     {% block head %}
+    <link rel="stylesheet" href="/colors-light.css" id="default-theme-light" media="(prefers-color-scheme: light)" />
+    <link rel="stylesheet" href="/colors-dark.css" id="default-theme-dark" media="(prefers-color-scheme: dark)" />
     <script src="/layoutget.js"></script>
     <title>{{ PAGE_TITLE }}</title>
     <meta
@@ -143,11 +145,38 @@ of the website source code:
                         >Large</button>
                     </li>
                 </ul>
+                <strong>Theme</strong>
+                <ul>
+                    <li>
+                        <button
+                            name="theme"
+                            value="light"
+                            class="menu-dropdown-select"
+                            type="submit"
+                        >Light</button>
+                    </li>
+                    <li>
+                        <button
+                            name="theme"
+                            value="dark"
+                            class="menu-dropdown-select"
+                            type="submit"
+                        >Dark</button>
+                    </li>
+                    <li>
+                        <button
+                            name="theme"
+                            value="__unset__"
+                            class="menu-dropdown-select"
+                            type="submit"
+                        >System default</button>
+                    </li>
+                </ul>
             </div>
           </details>
           <script src="/layoutset.js"></script>
         </form>
-        <center style="margin-top:5px">
+        <center style="margin-top:5px" class="copying">
             <a href="/copying.html">
                 <img src="/CC_BY-SA.svg" width="100" />
             </a>
