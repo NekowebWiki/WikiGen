@@ -11,6 +11,7 @@
     --mobi-nav-tog-bg: #000;
     
     --bg-img: url(/background-dark.png);
+    --copyright-filter: invert();
 
     --scroll-rgb: 21,41,54;
     --scroll2: #56a5a5aa;

@@ -208,6 +208,7 @@ header .tools li {
 }
 
 .navbar .menu-dropdown-body {
+  z-index: 99;
   background-color: var(--link);
   position: absolute;
   box-shadow: 1px 1px 5px 1px black;
@@ -222,6 +223,7 @@ header .tools li {
 
 .navbar .menu-dropdown-body button {
   display: block;
+  color: inherit;
   background-color: var(--layout-switch);
   width: 100%;
   border: none;
@@ -237,4 +239,9 @@ header .tools li {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+
+.copying img {
+    filter: var(--copyright-filter);
+    z-index: 1;
 }
