@@ -215,6 +215,7 @@ header .tools li {
   border-radius: 5px;
   margin-top: 5px;
   padding: 8px 0;
+  column-count: 3;
 }
 
 .navbar .menu-dropdown-body strong {

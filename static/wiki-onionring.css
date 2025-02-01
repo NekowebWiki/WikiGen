@@ -47,8 +47,4 @@ See the CNPL for details.
 #nekowebring .webring-links {
   font-size: small;
 }
-@media (prefers-color-scheme: dark) {
-    #nekowebring table {
-      background: #1f384a;
-    }
-}
+
