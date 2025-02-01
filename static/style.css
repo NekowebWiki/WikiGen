@@ -15,6 +15,7 @@ of the source files, see
 body {
   background: white var(--bg-img);
   background-repeat: repeat;
+  color: var(--primary-color);
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   animation: shiftbackground 5s linear infinite;
@@ -47,7 +48,7 @@ h4,
 h5,
 h6,
 p {
-  color: var(--primary-text);
+  color: var(--primary-color);
 }
 
 hgroup p {
@@ -56,7 +57,7 @@ hgroup p {
 }
 
 a:link {
-  color: var(--primary-text);
+  color: var(--primary-color);
   text-decoration: underline;
 }
 
@@ -67,12 +68,12 @@ a:hover {
 
 a:visited,
 a:active {
-  color: var(--primary-text);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 .main a:link {
-  color: var(--primary-text);
+  color: var(--primary-color);
 }
 
 /*
@@ -180,7 +181,7 @@ header .tools li {
 .navbar :is(li a:is(:link,:visited,:active), .menu-dropdown summary) {
   display: block;
   border-radius: 25px;
-  color: var(--primary-text);
+  color: var(--primary-color);
   padding: 8px 16px;
   background-color: var(--link);
   text-decoration: none !important;
