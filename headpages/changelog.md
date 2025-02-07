@@ -7,6 +7,10 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2025 Feb 6
+
+* Added theme selector: it still defaults to your system preference.
+
 ## 2025 Jan 26
 
 * Added new article: [\#nekoweb (IRC)](/w/nekoweb_irc.html).
