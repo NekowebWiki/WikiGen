@@ -29,7 +29,7 @@ See the CNPL for details.
 }
 
 #nekowebring tbody {
-  filter: invert() grayscale() brightness(3);
+  filter: var(--nekowebring-filter);
 }
 
 #nekowebring .webring-prev {

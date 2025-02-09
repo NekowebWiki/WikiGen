@@ -12,6 +12,9 @@
     
     --bg-img: url(/background.png);
 
+    --copyright-filter: unset;
+    --nekowebring-filter: invert() grayscale() brightness(3);
+
     --scroll-rgb: 230,255,255;
     --scroll2: #065555aa;
     --scroll-less: rgba(var(--scroll-rgb), 170);

@@ -11,7 +11,9 @@
     --mobi-nav-tog-bg: #000;
     
     --bg-img: url(/background-dark.png);
+
     --copyright-filter: invert();
+    --nekowebring-filter: grayscale() contrast(2) invert() brightness(6) invert();
 
     --scroll-rgb: 21,41,54;
     --scroll2: #56a5a5aa;
