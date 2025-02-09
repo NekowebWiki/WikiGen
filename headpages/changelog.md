@@ -5,6 +5,11 @@ A site changelog for the Nekoweb wiki!
 
 Note that all dates written here are in UTC, and are formatted as year month day (where month is the short english month name, and day is zero padded until it is 2 digits in length).
 
+<iframe
+    src="https://nekoweb.org/frame/follow"
+    frameborder="0" width="100%" height="35"
+></iframe>
+
 <place-toc/>
 
 ## 2025 Feb 6
