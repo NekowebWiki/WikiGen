@@ -7,12 +7,17 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <iframe
     src="https://nekoweb.org/frame/follow"
-    frameborder="0" width="100%" height="35"
+    frameborder="0" width="163" height="35"
 ></iframe>
 
 <place-toc/>
 
-## 2025 Feb 6
+## 2025 Feb 10
+
+* Follow button is now on the changelog.
+* The webring image can now be touched by themes.
+
+## 2025 Feb 06
 
 * Added theme selector: it still defaults to your system preference.
 
