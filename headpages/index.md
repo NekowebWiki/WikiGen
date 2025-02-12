@@ -8,6 +8,11 @@ web hosting service started in 2024, targeted to creating personal websites.
 
 ## Contribute and Community
 
+<iframe
+    src="https://nekoweb.org/frame/follow"
+    frameborder="0" width="163" height="35"
+></iframe>
+
 This wiki has a public [Discord server](https://discord.gg/f4b4e2Nudk), and is full free and open source on [GitHub](https://github.com/nekowebwiki/wikigen)! You can join the Discord for site updates, or to make suggestions; and you can go to the GitHub to submit articles or changes to articles. Feel free to check either of those out! Additionally, for site updates, you can follow [the RSS feed](/feed.xml), and frequently check in on the [changelog](/changelog.html).
 
 ## Link to the wiki!
