@@ -12,6 +12,10 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
+## 2025 Feb 13
+
+* Add follow button to site index
+
 ## 2025 Feb 10
 
 * Follow button is now on the changelog.
