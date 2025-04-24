@@ -250,6 +250,102 @@ width="170" height="28"></iframe>
 - **30-11-2024**: Dimden announces:
   >Thanks to hana ([ourheroisasandwich.nekoweb.org](https://ourheroisasandwich.nekoweb.org)) Nekoweb is now (mostly) mobile friendly!
 
+- **13-12-2024**: Dimden announces:
+  >Nekoweb now has a built in RSS feed! You can add your RSS file in your site settings and it'll show posts to your followers (and in global feed if you have enough followers).
+  >You can style your posts the same way as you did with your user box using elements.css. Additionally, @Supporters have ability to set unique style per-post using <style> and overflow the post box.
+  >Enjoy!!!!
+
+- **14-12-2024**: Dimden announces:
+  >Nekoweb now has [site statistics](https://nekoweb.org/stats) page!
+
+- **20-12-2024**: Dimden announces:
+  >Hi. Unfortunately, we've removed 'Cat tier' ($1 one) from Nekoweb. Patreon and payment fees and taxes made it not worth it for us to leave it on (we got like $0.3 from $1).
+  >Please keep in mind, that if you're currently on Cat tier, you'll continue having it without any changes (unless you unsubscribe or upgrade to higher tier). This change only affects new users.
+
+- **27-12-2024**: Dimden annouces:
+  >important announcement
+  >The cat seen on Nekoweb banners is named Kuro.
+  >Thank you for your attention.
+
+- **01-01-2025**: Dimden annouces:
+  >Happy new 2005!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+- **29-01-2025**: Dimden announces:
+  >Nekoweb hit 10,000 users
+
+- **19-03-2025**: Gutteral announces:
+  >Please don’t vent in nekoweb, it makes users uncomfortable and we are quite frankly not a good place for that. You have a support network that will help you better than nekoweb, you have friends and        >family, and in the worst case scenario, please seek professional help, such as a counselor.
+
+- **29-03-2025**: Dimden announces:
+  >Hi, in response to community feedback, there has been a number of changes in terms of server and Nekoweb moderation.
+  >
+  >Nekoweb Discord changes:
+  >
+  >*  There's 2 new moderators: @june ♡ layercake ♡ oc club prez and @sen.fish
+  >*  Moderator role is now visible in member list so you can see who's online, and is also now pingable if something needs urgent response
+  >*  There's new rule list. Please review the new rules in rules
+  >*  You can now report users and messages. There's an instruction on how to do it in rules
+  >*  I also made some private moderator guidelines to make punishment system more clear for all moderators
+  >*  If you get banned from the Discord server, you'll be able to appeal your ban once per 6 months using https://appeal.gg/hvfHKyVS6b
+  >*  nekoweb-help has been remade into a forum channel
+  >
+  >Nekoweb changes:
+  >*  Official Nekoweb email has been changed from admin@nekoweb.org to support@nekoweb.org. Please use the new address if you need support.
+  >*  Some changes in how https://nekoweb.org/contact page works internally, making it easier for other team members to reply to your messages
+  >*  Contact page is now more clear about the fact that you can use it to report sites
+  >*  Removed Discord link from Contact page to rely less on Discord for support
+
+- **31-03-2025** Gutteral announces:
+  >**LOOKING FOR ARTISTS**
+  >Hai, would you like to draw stuff for nekoweb? Please consider applying for the Nekozine then. Nekozine is a collaborative zine centered around Nekoweb, Web Development, and Programming! Everyone is        >welcome to apply, artists, writers, and whatever else you can put into PDF! We're open to experimentation and varying mediums! 
+  >Primary Roles include:
+  >* Zine Artist
+  >* Zine Writer
+  >* Merch Artist
+  >**Erm... Merchandise?**
+  >Yep! Nekozine wants to make little trinkets for Nekoweb users to hold and cherish. This is an initiative based off user feedback. All merchandise created will be PRE-ORDER only! All Merchandise Artists     >will be compensated for their designs, as well as receive a free product of whatever they design! If you want to read about the calculations, you can go to the about.
+  >If you have any questions, concerns, or even suggestions, please don't be afraid to reach out and tell us! Since this is the first time I've personally hosted a Zine, I am open to constructive criticism
+
+- **31-03-2025** Dimden announces:
+  >Zine website: https://zine.nekoweb.org/index.html
+  >Apply: https://my.liberaforms.org/nekozine-application
+
+- **07-04-2025** Gutteral announces:
+  >7 days left
+
+- **13-04-2025**: Gutteral announces:
+  >**1 day**
+
+- **14-04-2025**:
+  >ALMOST 1 HOUR LEFT!!!!!!!!!!!!
+
+- **18-04-2025**: Dimden announces:
+  >Since Nekoweb Discord is getting pretty large, ⁠general and ⁠buffer-overflow are getting quite cluttered with a lot of messages, and it's kinda reaching it's limit with possible topics at once. I always      >wanted to separate different interests but I always hated having a huge amount of channels (and a lot of interests might be too niche or different from Nekoweb itself). So there's a nice solution to this:
+  >
+  >Nekoweb Discord is launching ⁠clubs ! This is a forum channel that will include admin-approved clubs where you'll be able to talk about various interests.
+  >Each club will have it's own President that will moderate it and oversee that everything's good and on-topic there. They have @Club President role that allows them to moderate the messages in their         >thread.
+  >You can submit applications to launch your own club in ⁠club-applications and become it's President! The club you want to launch should be have some kind of interest (at least 4 members that would talk      >there).
+  >Please review the list of clubs in ⁠clubs before submitting application for new one. You should also write in the application why do you think you would be a good President for the club you want to          >create. Getting people to vouch for you is also a great way to get approval chance higher. A person can only be a president of 1 club. Do not submit multiple applications for different clubs. Also keep     >in mind that being a president will require your attention and responsibility! If you're no longer active, or don't moderate good enough, your club will either be removed or presidency will be              >transferred to someone else.
+  >
+  >Looking forward to have more clubs !!! Also, now that Zine applications are now closed, we are in process of reviewing them all. Stay tuned.
+
+- **18-04-2025**: Dimden announces:
+  >Club applications were moved to ⁠club-applications! All existing applications in ⁠suggestions-bugs-etc will be locked and in a few days deleted, so please recreate your application if you have a pending      >application there.
+  >
+  >Please read POST GUIDELINES before submitting application. It was now updated with new rules and information.
+
+- **20-04-2025**: Gutteral announces:
+  >Nekoweb
+
+- **21-04-2025**: Gutteral announces:
+  >nekozine members have been emailed / added role
+  >
+  >if you are a user who only gave ur discord and you don't have the nekozine role i regret to inform you that your application has been denied T_T !!! I tried to send everyone who was denied a Direct >  >    >Message but some messages didn't get past discord DM filter D:
+
+- **21-04-2025**: Gutteral announces:
+  >People who joined from receiving an acceptance email: Please Ping Me so you can get your role
+
+
 ## Resources used
 * https://nekoweb.org/
 * [Nekoweb Discord](https://discord.gg/hvfHKyVS6b)
