@@ -6,7 +6,7 @@
 .site-box .sitefeature{background:center no-repeat url(//wiki.nekoweb.org/logo.png);border:none}
 .site-box .sitefeature img{opacity:0}
 /*Follow button*/
-.follow{background:url(//wiki.nekoweb.org/nekoweb-icon.png) left no-repeat #bbd8bb;background-size:contain;padding-left:23px;transition:transform 1s,filter 1s;}
-.follow:hover{transform:rotate3d(50, 1, 0, 45deg);filter:grayscale(.5)}
+.follow{background:#9ef;transition:background 1s;border:solid black 1px;}
+.follow:hover{background:#ccc}
 /* Postbox */
 .post-box{background:linear-gradient(0.25turn,#e6ffff 46%,#0000 51%),url(//wiki.nekoweb.org/background-animated.svg),#e6ffff;background-size:contain;border:none;}.post-box::after{background:url(//wiki.nekoweb.org/longcat.png) no-repeat right; height:100%;width:100%;display:block;content:"";position:absolute;right:0;top:0;image-rendering:pixelated;background-size:contain}.post-box .post-top-dot{display:none}.post-box .post-author{display:none}.post-box .post-dot{display:none}.post-box .post-title{display:inline-block;margin:0;font-style:normal;font-family:inherit}

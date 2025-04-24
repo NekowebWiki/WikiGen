@@ -7,10 +7,18 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <iframe
     src="https://nekoweb.org/frame/follow"
-    frameborder="0" width="163" height="35"
+    frameborder="0" width="163" height="22"
 ></iframe>
 
 <place-toc/>
+
+## 2025 Apr 24
+
+* Updated the follow button, it's now smaller and matches the site theme a little better.
+
+## 2025 Apr 21
+
+* Changes to [Nekoweb](/w/nekoweb.html).
 
 ## 2025 Feb 13
 

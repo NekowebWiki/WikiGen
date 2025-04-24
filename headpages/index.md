@@ -12,7 +12,7 @@ This wiki has a public [Discord server](https://discord.gg/f4b4e2Nudk), and is f
 
 <iframe
     src="https://nekoweb.org/frame/follow"
-    frameborder="0" width="163" height="35"
+    frameborder="0" width="163" height="22"
 ></iframe>
 
 ## Link to the wiki!
