@@ -12,9 +12,10 @@ Note that all dates written here are in UTC, and are formatted as year month day
 
 <place-toc/>
 
-## 2025 Apr 24
+## 2025 May 2
 
 * Updated the follow button, it's now smaller and matches the site theme a little better.
+* Fixed [Nekoweb](/w/nekoweb.html).
 
 ## 2025 Apr 21
 

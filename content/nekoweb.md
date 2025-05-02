@@ -252,7 +252,7 @@ width="170" height="28"></iframe>
 
 - **13-12-2024**: Dimden announces:
   >Nekoweb now has a built in RSS feed! You can add your RSS file in your site settings and it'll show posts to your followers (and in global feed if you have enough followers).
-  >You can style your posts the same way as you did with your user box using elements.css. Additionally, @Supporters have ability to set unique style per-post using <style> and overflow the post box.
+  >You can style your posts the same way as you did with your user box using elements.css. Additionally, @Supporters have ability to set unique style per-post using &lt;style&gt; and overflow the post box.
   >Enjoy!!!!
 
 - **14-12-2024**: Dimden announces:
