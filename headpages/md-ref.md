@@ -20,7 +20,13 @@ Various options may be in the metadata section of the file. Below is all metadat
 | `notoc`       | Disables the table of contents, defaults to false(table of contents is shown). | No        |
 | `forcetitle`  | Force the tab title.                                                           | No        |
 | `desc`        | Set the page description (open graph and normal meta).                         | No        |
-
+This is an example of metadata section:
+```
+---
+title: Markdown reference
+subtitle: Reference for Markdown on this wiki.
+---
+```
 ## Basic formatting
 
 | Usage | Example | Preview |
@@ -28,7 +34,26 @@ Various options may be in the metadata section of the file. Below is all metadat
 | Bold  | `**Bold**` | **Bold** |
 | Italics | `*Italics*` | *Italics* |
 | Strike | `~~strike-through~~` | ~~strike-through~~ |
+| Inline code | `` `Inline code` `` | `Inline code` |
+## Headers
+Headers allow you to group information in chunks.
 
+Header above can be created with following markdown:
+```
+## Headers
+```
+## Paragraphs
+To make a paragraph add an empty line between the two lines you want to separate:
+```
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+Bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh
+```
+The above markdown outputs:
+
+Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+
+Bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh
 ## Links and Images
 
 You can add links to pages using the usual Markdown syntax, that being `[text to display](https://example.com)`, which renders to [text to display](https://example.com).
@@ -45,6 +70,50 @@ Images can also be added to pages using Markdown syntax, however, for many cases
 ```
 
 Using HTML tags is better because it allows resizing of the image, as well as for `<figure>`, allowing a caption to be added (this may have unique stying at some point).
+
+## Code Blocks
+Just like Inline code, but in a form of block.
+````
+```
+"hello" + "world"
+>> helloworld
+```
+````
+
+The above markdown outputs: 
+
+```
+"hello" + "world"
+>> helloworld
+```
+
+## Lists
+Sometimes information looks nice as a list.
+
+Unordered lists:
+```
+- Foo
+- Fee
+- Faa
+```
+The above markdown outputs: 
+
+- Foo
+- Fee
+- Faa
+
+Ordered lists:
+
+```
+1. Foo
+2. Fee
+3. Faa
+```
+The above markdown outputs: 
+
+1. Foo
+2. Fee
+3. Faa
 
 ## Tables
 
