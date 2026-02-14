@@ -1,9 +1,11 @@
 # Stuff build either by Python or the SSG
 __pycache__
 build
+
 # Testing servers
 _site
 .jekyll-cache
+
 # Code editors
 .replit
 replit.toml
@@ -11,6 +13,10 @@ replit.toml
 
 # Generally do not include dotfiles
 .*
+
+# Exclude diffs and patches
+*.diff
+*.patch
 
 ## Except for these
 !.gitignore
