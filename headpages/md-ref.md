@@ -11,7 +11,8 @@ All of the following functionallity is provided entirely by [markdown2](https://
 
 ## Metadata
 
-Various options may be in the metadata section of the file. Below is all metadata options available.
+Various options may be in the metadata section of the file, formatted as frontmatter.
+Below is all metadata options available.
 
 |    Name       |                                     Usage                                      | Required? |
 |---------------|--------------------------------------------------------------------------------|-----------|
@@ -20,13 +21,16 @@ Various options may be in the metadata section of the file. Below is all metadat
 | `notoc`       | Disables the table of contents, defaults to false(table of contents is shown). | No        |
 | `forcetitle`  | Force the tab title.                                                           | No        |
 | `desc`        | Set the page description (open graph and normal meta).                         | No        |
+
 This is an example of metadata section:
+
 ```
 ---
 title: Markdown reference
 subtitle: Reference for Markdown on this wiki.
 ---
 ```
+
 ## Basic formatting
 
 | Usage | Example | Preview |
@@ -35,25 +39,29 @@ subtitle: Reference for Markdown on this wiki.
 | Italics | `*Italics*` | *Italics* |
 | Strike | `~~strike-through~~` | ~~strike-through~~ |
 | Inline code | `` `Inline code` `` | `Inline code` |
-## Headers
-Headers allow you to group information in chunks.
 
-Header above can be created with following markdown:
-```
 ## Headers
+
+Headers allow you to group information into sections. Headers are created by
+preceeding a line with hashes. More hashes means the section is a subsection of
+the current section.
+
 ```
+## Section
+### Subsection
+#### Subsubsection
+```
+
 ## Paragraphs
-To make a paragraph add an empty line between the two lines you want to separate:
+
+Paragraphs can be created by separating each wanted paragraph with an empty line:
+
 ```
-Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+paragraph1
 
-Bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh
+paragraph2
 ```
-The above markdown outputs:
 
-Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-
-Bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh bleh
 ## Links and Images
 
 You can add links to pages using the usual Markdown syntax, that being `[text to display](https://example.com)`, which renders to [text to display](https://example.com).
@@ -71,49 +79,35 @@ Images can also be added to pages using Markdown syntax, however, for many cases
 
 Using HTML tags is better because it allows resizing of the image, as well as for `<figure>`, allowing a caption to be added (this may have unique stying at some point).
 
-## Code Blocks
-Just like Inline code, but in a form of block.
-````
-```
-"hello" + "world"
->> helloworld
+## Code
+
+Allows for code snippets to be displayed, with syntax highlighting.
+
+````md
+```javascript
+alert('Hello, World!');
 ```
 ````
 
-The above markdown outputs: 
+This last example outputs:
 
-```
-"hello" + "world"
->> helloworld
+```javascript
+alert('Hello, World!');
 ```
 
 ## Lists
-Sometimes information looks nice as a list.
 
-Unordered lists:
-```
-- Foo
-- Fee
-- Faa
-```
-The above markdown outputs: 
+Markdown has 2 kinds of lists: ordered and unordered. Ordered lists are
+numbered lists constructed by typing a `1.` before the first entry, `2.` before
+the second, `3.` before the thrid, etc. Whereas unordered lists can be made by
+including either a hyphen (`-`) or asterisk (`*`) before each entry in a list.
+Every list entry is seperated with a newline, so a list coule be made as
 
-- Foo
-- Fee
-- Faa
-
-Ordered lists:
-
-```
+```md
 1. Foo
-2. Fee
-3. Faa
+2. Bar
+3. Baz
 ```
-The above markdown outputs: 
-
-1. Foo
-2. Fee
-3. Faa
 
 ## Tables
 
