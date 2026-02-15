@@ -2,6 +2,7 @@
 title: A guide to Nekoweb (Work in progress)
 subtitle: This guide covers the free static web hosting Nekoweb.
 ---
+<place-toc />
 ## Register an account
 
 In order to create an account for Nekoweb, you need to go to the
@@ -50,7 +51,7 @@ The file manager has these options:
 * Git: Git function for Nekoweb (Donator only)
 * FTP: FTP function for Nekoweb (Donator only)
 
-### How to create/upload custom cursors.
+### Creating/uploading custom cursors
 One of the cool features is the custom cursor others can see on the
 main Nekoweb site! In order to create one of these, you need to create
 an 12x17 (16x21 for supporters) pixel PNG file.
@@ -58,6 +59,13 @@ an 12x17 (16x21 for supporters) pixel PNG file.
 After creating your PNG file, you must upload it to your site's root
 directory for it to appear. You now have a cool looking cursor that
 others can see!
+
+### Designing a "Page not found" page
+Every website hosted on Nekoweb has a "Page not found" page by default. In order to edit it, find the `not_found.html` file in your website's directory.
+
+
+### Styling your site box, your posts in Nekoweb's global RSS feed & follow button
+In order to style those elements, you need to edit the `elements.css` file. Read about it more in this [in-depth guide](link to elements.css guide).
 
 ## Nekoweb API
 For a guide/infomation of the Nekoweb API, visit these 2 websites:
