@@ -19,10 +19,10 @@ This wiki has a public [Discord server](https://discord.gg/f4b4e2Nudk), and is f
 
 To link to the wiki, you can add the wiki button.
 
-<a href="/"><img src="/button.png" width="81" height="33" alt="Nekoweb Wiki"></a>
+<a href="/"><img src="/button.png" width="88" height="31" alt="Nekoweb Wiki"></a>
 
 ```html
-<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.png" width="81" height="33" alt="Nekoweb Wiki"></a>
+<a href="https://wiki.nekoweb.org/"><img src="https://wiki.nekoweb.org/button.png" width="88" height="31" alt="Nekoweb Wiki"></a>
 ```
 
 <script src="/oneko.js" type="text/javascript" data-cat="/oneko.gif"></script>
