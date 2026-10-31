@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="176mm"
+   height="62mm"
+   viewBox="0 0 177.08642 62.382716"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="Nekoweb Wiki button.svg"
+   inkscape:export-filename="Nekoweb wiki button.png"
+   inkscape:export-xdpi="12.7"
+   inkscape:export-ydpi="12.7"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#90f5ff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:export-bgcolor="#90f5ffff"
+     inkscape:zoom="1.2205845"
+     inkscape:cx="323.61545"
+     inkscape:cy="172.45836"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1"
+       inkscape:label="Cloud1"
+       style="display:inline">
+      <circle
+         style="fill:#d0f9ff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path1"
+         cx="177.08643"
+         cy="42.284466"
+         r="39.635593"
+         inkscape:label="CloudPuff2" />
+      <ellipse
+         style="fill:#d0f9ff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;paint-order:stroke fill markers"
+         id="path1-4"
+         cx="143.65677"
+         cy="66.39254"
+         inkscape:label="CloudPuff1"
+         rx="62.656769"
+         ry="39.635593" />
+    </g>
+    <g
+       id="g3"
+       inkscape:label="Cat-Cloud"
+       transform="translate(-3.9259045,-8.8165351)">
+      <circle
+         style="fill:#d0f9ff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-opacity:0.508021;paint-order:stroke fill markers"
+         id="path2"
+         cx="30.999041"
+         cy="38.29723"
+         r="20.511805"
+         inkscape:label="Head" />
+      <path
+         style="fill:#d0f9ff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-opacity:0.508021;paint-order:stroke fill markers"
+         d="M 37.52886,18.85255 55.212221,12.337928 51.433732,40.074173"
+         id="path3-8"
+         sodipodi:nodetypes="ccc"
+         inkscape:label="Right ear" />
+      <path
+         style="fill:#d0f9ff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linejoin:round;stroke-opacity:0.508021;paint-order:stroke fill markers"
+         d="M 24.46922,18.85255 6.7858587,12.337928 10.564348,40.074173"
+         id="path3-8-5"
+         sodipodi:nodetypes="ccc"
+         inkscape:label="Left ear" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:53.9598px;font-family:Fredoka;-inkscape-font-specification:'Fredoka Medium';letter-spacing:3.96875px;display:inline;fill:#4b9fff;fill-opacity:1;stroke:#000000;stroke-width:6.5;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers;image-rendering:auto;opacity:0.68085106"
+       x="23.488327"
+       y="50.304119"
+       id="text2-8"
+       inkscape:label="Wiki text"><tspan
+         sodipodi:role="line"
+         id="tspan2-1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:53.9598px;font-family:Fredoka;-inkscape-font-specification:'Fredoka Bold';letter-spacing:3.96875px;fill:#4b9fff;fill-opacity:1;stroke:#000000;stroke-width:6.5;stroke-dasharray:none;stroke-opacity:1"
+         x="0"
+         y="0">Wiki</tspan></text>
+  </g>
+</svg>
