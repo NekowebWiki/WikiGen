@@ -18,7 +18,7 @@ body {
   color: var(--primary-color);
   background-attachment: fixed;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  animation: shiftbackground 5s linear infinite;
+  animation: shiftbackground 10s linear infinite;
 }
 
 @keyframes shiftbackground {
@@ -26,7 +26,7 @@ body {
     background-position-x: 0;
   }
   to {
-    background-position-x: 400px;
+    background-position-x: 218.819mm;
     /* if the size of the background is changed, change this */
   }
 }
